@@ -6,9 +6,7 @@ modified:
 excerpt: "Software projects Pere Villega has been involved with"
 tags: [projects, software, apps]
 image:
-  feature: sample-image-2.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+  feature: background.jpg
 ---
 
 This page contains a list of things I've done which are publicly available. Check my [Github][1] profile for more! 

@@ -5,9 +5,7 @@ tags: [about, Pere Villega]
 modified: 2013-08-06T20:53:07.573882-04:00
 comments: false
 image:
-  feature: sample-image-2.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+  feature: background.jpg
 ---
 
 Welcome visitor! Make yourself comfortable! I'm Pere Villega, a software developer born in Barcelona and living in London. I'm currently working for [Gumtree.com](http://www.gumtree.com/) as Lead Software Engineer.

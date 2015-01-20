@@ -5,9 +5,7 @@ date: 2013-08-08 20:23
 excerpt: "Collection of bookmarks of Pere Villega"
 tags: [bookmarks, miscellanea]
 image:
-  feature: sample-image-2.jpg
-  credit: WeGraphics
-  creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
+  feature: background.jpg
 ---
 
 This page contains links that I've found interesting when browsing the internet, stored for future reference
