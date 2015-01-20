@@ -1,7 +1,7 @@
 ---
 layout: home
-excerpt: "A minimal Jekyll theme for your blog by designer Michael Rose."
-tags: [Jekyll, theme, responsive, blog, template]
+excerpt: "Personal blog of Pere Villega"
+tags: [programming, jvm, scala, java, ocaml, software engineer]
 image:
   feature: sample-image-1.jpg
   credit: WeGraphics
