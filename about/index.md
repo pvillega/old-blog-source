@@ -8,7 +8,7 @@ image:
   feature: background.jpg
 ---
 
-Welcome visitor! Make yourself comfortable! I'm Pere Villega, a software developer born in Barcelona and living in London. I'm currently working for [Gumtree.com](http://www.gumtree.com/) as Lead Software Engineer.
+Welcome visitor! Make yourself comfortable! I'm Pere Villega, a software developer born in Barcelona and living in London. I'm currently working for [Gumtree.com](http://www.gumtree.com/) as Lead Software Engineer. This page is correct as of January 2015 :)
 
 
 ## So who I am?
@@ -16,16 +16,15 @@ Welcome visitor! Make yourself comfortable! I'm Pere Villega, a software develop
 I'm a nerd. Correction, a [happily married][6] nerd, and (I believe) a decent husband :) 
 
 
-I like coding. I've been doing stuff for many years, trying new technologies, doing small personal projects. Many of them are lost as they were not "relevant" (amateurish hacks which I did not keep when replacing computers), but I store some stuff in [Github][3]. My love for programming has grown a lot since I discovered Scala and Play Framework. I feel comfortable working with them and the way they facilitate creating new apps motivates me to spend more time using them. 
+I like coding. I've been doing stuff for many years, trying new technologies, doing small personal projects. Many of them are lost as they were not "relevant" (amateurish hacks which I did not keep when replacing computers), but I store some stuff in [Github][3]. My love for programming has grown a lot since I discovered Scala and Play Framework. After my move to London I was busy and couldn't devote much spare time to coding, but I'm fixing this.
 
+I love reading, mostly fantasy and sci-fi but also some classics, although I won't read a book just because *it's popular*. Since I got my  Kindle I've read hundreds of books, so many in fact that I had to purchase a Voyager last Christmas to replace it. I get hooked on stories, I need to know what will happen next. And I read fast :) 
 
-I love reading. In fact, I like it so much that I have no TV at home. No time for it. Since I got my new Kindle I've read hundreds of books (and the list keeps increasing), including all the saga of Capitan Alatriste, Malazan Book of the Fallen saga, The Hunger Games trilogy, the full Vorkosigan saga (with Ethan of Athos and Falling Free) and several others. I get hooked on stories, I need to know what will happen next. And I read fast :) 
-
-I play games. Board games, role games, videogames... you name it. I enjoy them, more so if they are strategy games. Sadly, I don't have as much time for them as I would like, as between coding and playing, coding wins the battle. Little secret: I want to create my own game. Someday.
+I play games. Board games, role games, computer games... you name it. I enjoy them, more so if they are strategy games. Sadly, I don't have as much time for them as I would like. Little secret: I want to create my own game. Someday.
 
 I support Manchester United. To be honest I don't watch many matches, if any at all. But I support them. Not every choice has to be rational, does it?
 
-I like Linux. And Android, of which I own one. I can't see myself using a restrictive platform for personal use.
+I like Linux. And Android, of which I own one. I can't see myself using a restrictive platform for personal use, although if I have a decent terminal, a browser and a decent IDE, nothing else matters much.
 
 
 ## What do I do?
@@ -43,7 +42,7 @@ I also enjoy learning new things as I believe that, in such a dynamic world as t
 
 This is my personal page, built using [Octopress][9] and deployed to Github pages. I had an [old site][1] that I built myself using Play Framework, but going that path was trying to reinvent the wheel. A nice experience, not so practical. So I decided to migrate it to what you see. 
 
-I've never been a huge fan of the blog templates. I hate layouts in which you seem to be forced to write just to not show that you didn't for the last month. Hard to show you were coding instead. So, if you see a lack of posts, check my [Github profile][3]. I may be busy in there.
+Life happens and I have periods in which I can't blog as much as I'd like. If you see a lack of posts, check my [Github profile][3]. I may be busy in there, or in some other non-public engagement.
 
 Feel free to [clone][2] and deploy your own version of this site if you like it. If you have comments on the site or its content, please [contact me][4]. I promise I'm a nice guy, and I'll try to answer. Of course you are not required to, but I would really appreciate it. 
 
