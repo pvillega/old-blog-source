@@ -22,6 +22,8 @@ This page contains links that I've found interesting when browsing the internet,
 
 [http://joshrendek.com/2013/01/securing-ubuntu/](http://joshrendek.com/2013/01/securing-ubuntu/) : How to secure an Ubuntu server
 
+[http://blog.lyte.id.au/2012/03/19/ssh-agent-forwarding-is-a-bug/](http://blog.lyte.id.au/2012/03/19/ssh-agent-forwarding-is-a-bug/): proper ssh tunneling
+
 ### Configuration
 
 [http://www.vagrantup.com/](http://www.vagrantup.com/) : Vagrant allows you to create VMs that can be used to host specific dev environments (PostgreSQL, MongoDB, etc) per project base
@@ -33,6 +35,50 @@ This page contains links that I've found interesting when browsing the internet,
 [http://www.shouldiremoveit.com/index.aspx](http://www.shouldiremoveit.com/index.aspx) : Flags software you can safely remove from your desktop
 
 ## Development
+
+### Tools
+
+[http://www.unheap.com/](http://www.unheap.com/): repository of Jquery plugins
+
+[http://getbootstrap.com/](http://getbootstrap.com/): the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web
+
+[https://github.com/stripe/jquery.payment](https://github.com/stripe/jquery.payment) and [https://stripe.com/docs/checkout](https://stripe.com/docs/checkout): for credit card payment
+
+[http://fronteed.com/iCheck/](http://fronteed.com/iCheck/): custom checkboxes
+
+[https://github.com/dangrossman/bootstrap-daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker): date-range for bootstrap
+
+[http://select2.github.io/](http://select2.github.io/): custom select boxes for bootstrap
+
+[http://daneden.github.io/animate.css/](http://daneden.github.io/animate.css/): css animations
+
+[http://www.chartjs.org/](http://www.chartjs.org/): charts using html 5
+
+[https://icomoon.io/](https://icomoon.io/): custom icons 
+
+[http://thenounproject.com/](http://thenounproject.com/): custom icons
+
+[http://fontawesome.io/](http://fontawesome.io/): more custom icons
+
+[http://gulpjs.com/](http://gulpjs.com/): node.js build system
+
+[https://papertrailapp.com/](https://papertrailapp.com/): logging management
+
+[https://deadmanssnitch.com/](https://deadmanssnitch.com/): cron job monitoring
+
+[http://www.tarsnap.com/](http://www.tarsnap.com/): server backups
+
+[http://www.mailgun.com/](http://www.mailgun.com/): email services
+
+[https://github.com/tijsverkoyen/CssToInlineStyles](https://github.com/tijsverkoyen/CssToInlineStyles): email styling
+
+[http://www.perfectaudience.com/](http://www.perfectaudience.com/): retargetting for users - marketing
+
+[http://customer.io/](http://customer.io/): user engagement
+
+[http://betalist.com/](http://betalist.com/): advertising for startups
+
+[http://www.leadpages.net/products/](http://www.leadpages.net/products/): lead pages for SaaS
 
 ### Processes
 
@@ -146,6 +192,14 @@ This page contains links that I've found interesting when browsing the internet,
 [http://kzhu.net/does-life-end-at-35.html](http://kzhu.net/does-life-end-at-35.html) : On pace in life and success
 
 ## Lifestyle Business
+
+### How To
+
+https://medium.com/@delfinet/how-we-launched-our-saas-in-1-week-fc8f1fd8b41f](https://medium.com/@delfinet/how-we-launched-our-saas-in-1-week-fc8f1fd8b41f): how to launch SaaS in 1 week
+
+### Tools
+
+[https://www.syscloud.com/](https://www.syscloud.com/): backups and security for Google Apps
 
 ### Management
 
