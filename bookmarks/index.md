@@ -28,6 +28,8 @@ This page contains links that I've found interesting when browsing the internet,
 
 [http://www.vagrantup.com/](http://www.vagrantup.com/) : Vagrant allows you to create VMs that can be used to host specific dev environments (PostgreSQL, MongoDB, etc) per project base
 
+[http://www.brendangregg.com/blog/2015-03-03/performance-tuning-linux-instances-on-ec2.html](http://www.brendangregg.com/blog/2015-03-03/performance-tuning-linux-instances-on-ec2.html): performance tuning for Linux
+
 ### Windows
 
 [http://ninite.com/](http://ninite.com/) : Install software in Windows automatically, very useful when formatting
