@@ -24,11 +24,23 @@ This page contains links that I've found interesting when browsing the internet,
 
 [http://blog.lyte.id.au/2012/03/19/ssh-agent-forwarding-is-a-bug/](http://blog.lyte.id.au/2012/03/19/ssh-agent-forwarding-is-a-bug/): proper ssh tunneling
 
+### Provisioning
+
+[https://tumblr.github.io/collins/](https://tumblr.github.io/collins/): infrastructure management
+
+### Monitoring
+
+[http://prometheus.io/](http://prometheus.io/): modern monitoring system
+
+[https://www.icinga.org/](https://www.icinga.org/): notification system for monitoring
+
 ### Configuration
 
 [http://www.vagrantup.com/](http://www.vagrantup.com/) : Vagrant allows you to create VMs that can be used to host specific dev environments (PostgreSQL, MongoDB, etc) per project base
 
 [http://www.brendangregg.com/blog/2015-03-03/performance-tuning-linux-instances-on-ec2.html](http://www.brendangregg.com/blog/2015-03-03/performance-tuning-linux-instances-on-ec2.html): performance tuning for Linux
+
+[http://www.pagerduty.com/](http://www.pagerduty.com/): alerting system for ops team
 
 ### Windows
 
