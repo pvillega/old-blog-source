@@ -50,6 +50,12 @@ This page contains links that I've found interesting when browsing the internet,
 
 ## Development
 
+### Research
+
+[Papers We Love](https://github.com/papers-we-love/papers-we-love): Git repository with lots of scientific papers on CS subjects
+
+[TinyToCS](http://tinytocs.org/): more papers on CS subjects
+
 ### Tools
 
 [http://www.unheap.com/](http://www.unheap.com/): repository of Jquery plugins
@@ -146,6 +152,17 @@ This page contains links that I've found interesting when browsing the internet,
 [https://github.com/kaiinkinen/pvm](https://github.com/kaiinkinen/pvm) : A tool to run several versions of Play at once
 
 [http://stackoverflow.com/questions/11350800/play-constantly-writes-to-disc-causing-higher-bill-on-amazon-ec2](http://stackoverflow.com/questions/11350800/play-constantly-writes-to-disc-causing-higher-bill-on-amazon-ec2) : Issue with Java in cloud servers where multiple writes to disc might happen
+
+### Mobile Apps
+
+[Digits](https://dev.twitter.com/twitter-kit/android/digits): sign in with phone number
+
+[Crashlytics](https://get.fabric.io/crashlytics): crash reporting
+
+[Answers](https://get.fabric.io/answers): analytics for mobile
+
+[MoPub](https://get.fabric.io/mopub): Ads revenue for mobile
+
 
 ## Personal Development
 
