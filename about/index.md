@@ -2,13 +2,13 @@
 layout: page
 title: About me
 tags: [about, Pere Villega]
-modified: 2013-08-06T20:53:07.573882-04:00
+modified: 2015-05-03T20:53:07.573882-04:00
 comments: false
 image:
   feature: background.jpg
 ---
 
-Welcome visitor! Make yourself comfortable! I'm Pere Villega, a software developer born in Barcelona and living in London. I'm currently working for [Gumtree.com](http://www.gumtree.com/) as Lead Software Engineer. This page is correct as of January 2015 :)
+Welcome visitor! Make yourself comfortable! I'm Pere Villega, a software developer born in Barcelona and living in London. I'm currently a Scala/Java contractor with several years of experience developing applications. This page is correct as of May 2015 :)
 
 
 ## So who I am?
