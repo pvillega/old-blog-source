@@ -11,6 +11,8 @@ Heroku has announced [beta support](https://devcenter.heroku.com/articles/gettin
 
 <!-- more -->
 
+**Updated 15/5/2015:** Michael Friss from Heroku sent me an email regarding the concerns I raised, update at the end with his comments.
+
 I have a confession to make before I start: I was a Heroku convert that left the flock but is heading back to it. Years ago, when Heroku added support for Play apps, I made the same mistake as many developers before: I built my own (crappy) blog engine. I don't know if the code is still around but for the sake of my employability I won't surface any link to it ;)
 
 At that time Heroku was very convenient, albeit expensive: $37/month for a personal blog with dozens of visits per month... not a sound idea. I ended up looking for alternatives and realised the obvious: AWS, Linode and others were way cheaper and provided much more power. So I moved away.
@@ -142,6 +144,16 @@ Now, I may be missing something obvious as I'm not an expert, but as far as I un
 It seems by trying to adopt a new technology now the developer needs to worry a bit more about sysadmin things. And also, not critical but still relevant, we need to upload the locally-built slug to the system. This can be up to 300Mb, which kind of defeats the speed increase of doing the build process in your beefy machine. Asymmetric connections are still the norm, unfortunately.
 
 So, I get why is Heroku trying to do this, but I'm not sure it has any real benefit as unfortunately not all developers may realise some implications. Or maybe that's the point: get people on-board via Docker and then show them a simpler and maybe safer way, the old and tested one.
+
+**UPDATE:** As I mentioned above, I received an email from Michael Friss (from Heroku) about the concerns I had. I feel they address the issues and it is fair to mention it:
+
+>You stack concerns are valid and interesting, so I want to address them in detail.
+
+>`heroku docker:release` does not (currently) release the entire heroku/cedar:14 that you created locally. It only extracts the `/app` contents and packages that into a slug (containing a JVM, your packages and your app) that's released to Heroku. That's deployed to the same Heroku runtime stack as slugs from normal buildpacks, and we keep that patched and updated. We also keep the `heroku/cedar:14` image updated on Docker-hub for you to pull.
+
+>As we make progress on the Docker-stuff, and if it graduates out of beta, we'll build supported and hands-off flows similar to how the Heroku-supported buildpacks work. (We'll probably also rely more on Buildpacks to make the Docker-flow work. Check out how Python works right now: https://github.com/heroku/heroku-docker/blob/master/platforms/python/Dockerfile.t#L31
+
+>You're correct that there's ALSO an option to break out of the supported flow and tweak the Dockerfile. This has roughly the same semantics as forking a Heroku buildpack or creating a buildpack from scratch. Something that 1000s of Heroku users do.
 
 
 That's all. As always, feedback via Twitter/Email is more than welcome. Cheers!
