@@ -9,7 +9,9 @@ image:
 ---
 
 It's March and Java 8 is [coming soon](https://blogs.oracle.com/java/entry/java_se_8_schedule). A delayed and very expected release of Java with plenty of new tools: lambdas, default methods, etc.
+
 <!-- more -->
+
 I've written about Java 8 and some of the new tools it provides in the [Gumtree dev blog](http://www.gumtree.com/devteam/2014-03-05-java-8-is-coming.html). There I list the changes along small code samples showing them in action. 
 
 As always, feedback via Twitter/Email is more than welcome.

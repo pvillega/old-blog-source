@@ -10,6 +10,7 @@ image:
 I wrote another post for [Gumtree](http://www.gumtree.com/) developer blog. I attended a meetup in StackCareers office in London. I've attended a few meetups (less than I'd like!) since I came to the City and joined Gumtree, but I consider this one to be one of the best. 
 
 <!-- more -->
+
 The subject was Building a Developer Centred Company Culture, which is of particular interest to me, but the speakers did good presentations and the ideas they shared captured my attention more than other events I've attended.
 
 I took notes during the talks and I'd like to share a summary of the main points, as it is a relevant subject for many developers.

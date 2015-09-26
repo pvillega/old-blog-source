@@ -8,7 +8,9 @@ image:
   feature: background.jpg
 ---
 
-Today I was working with a unit test class for my [Google Summer of Code](https://wiki.duraspace.org/display/GSOC/GSOC10+-+Add+Unit+Testing+to+Dspace) project. Launching the test raised a concurrency exception due to me using [ContiPerf](http://databene.org/contiperf.html) to check the performance of some methods. It's a situation that, given the piece of code tested, would not usually happen.<!-- more -->
+Today I was working with a unit test class for my [Google Summer of Code](https://wiki.duraspace.org/display/GSOC/GSOC10+-+Add+Unit+Testing+to+Dspace) project. Launching the test raised a concurrency exception due to me using [ContiPerf](http://databene.org/contiperf.html) to check the performance of some methods. It's a situation that, given the piece of code tested, would not usually happen.
+
+<!-- more -->
 
 But seldom doesn't equal never, so I proceeded to hunt the source of the error to fix it. The issue was a List that was being accessed via an iterator. The concrete implementation was an [ArrayList](http://download-llnw.oracle.com/javase/6/docs/api/java/util/ArrayList.html), and I though I had cracked open the issue. I still remember from my [SCJP](http://in.sun.com/training/certification/java/scjp.xml) that [Vector](http://download-llnw.oracle.com/javase/6/docs/api/java/util/Vector.html) is the class to use when you want a List that supports concurrency in Java. 
 

@@ -7,7 +7,9 @@ tags: [jasmine, angularjs, play2, playframework]
 image:
   feature: background.jpg
 ---
-*Christmas* break is over, and on a whim I started to check [AngularJs](http://angularjs.org/). If you haven't tested it yet, do it. I've toyed around  with Backbone and some other Javascript *single page app* frameworks, and Angular is by far the one that I liked the most. It has simplicity embedded in its core, and turning tedious tasks (as setting controllers) into something trivial makes it a pleasure to use. Simplicity. Such an important concept, and one which is seldom present in frameworks. <!-- more --> 
+*Christmas* break is over, and on a whim I started to check [AngularJs](http://angularjs.org/). If you haven't tested it yet, do it. I've toyed around  with Backbone and some other Javascript *single page app* frameworks, and Angular is by far the one that I liked the most. It has simplicity embedded in its core, and turning tedious tasks (as setting controllers) into something trivial makes it a pleasure to use. Simplicity. Such an important concept, and one which is seldom present in frameworks. 
+
+<!-- more --> 
 
 But I digress. Back to the post. Adding Angular to a Play app is as simple as you can imagine, as in the end it's a Javascript library. Add the Angular files, code controllers and services, put Angular templates under `public` so Angular can get them, and you are done.  You can see a project sample [in my Github account](https://github.com/pvillega/play2demo-jasmine). Be aware the sample is very rough and has minimal functionality, the aim was to see how can they be linked, not to push Angular boundaries.
 

@@ -8,7 +8,9 @@ image:
   feature: background.jpg
 ---
 
-Mobile is the new king and HTML 5 allows developers to, at last, build once and run everywhere: tablets, phones, desktops... <!-- more -->
+Mobile is the new king and HTML 5 allows developers to, at last, build once and run everywhere: tablets, phones, desktops... 
+
+<!-- more -->
 
 Nothing controversial in that sentence, but unfortunately Mobile is still *slow*. And even if we see again and again that we should do *mobile first* when building a web site, that doesn't seem to work. At east judging by the rendering time of a normal page in my smartphone. And [page load time is money][2].
 

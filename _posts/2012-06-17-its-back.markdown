@@ -7,7 +7,9 @@ tags: [blog]
 image:
   feature: background.jpg
 ---
-It's been a while, but the domain is live again! There was some unfortunate incident which wrecked the domain and left my previous blog unusable. After many months of procrastination, I've restored it back to a working state. <!-- more -->
+It's been a while, but the domain is live again! There was some unfortunate incident which wrecked the domain and left my previous blog unusable. After many months of procrastination, I've restored it back to a working state. 
+
+<!-- more -->
 
 One of the reasons of the delay is the way the site runs now. For a while I wanted to do something more personal than a simple "out-of-the-shelf" blog. I don't post regularly enough as to have a blog. I post by whim, when I see something interesting or when I feel I should share something. I was using the "blog" mostly as a storage place for links and documentation. And it was handy.
 

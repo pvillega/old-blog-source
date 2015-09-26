@@ -7,7 +7,9 @@ tags: [catalonia]
 image:
   feature: background.jpg
 ---
-Let's spur some controversy! Outside Spain very few know about the reality of [Catalonia](http://en.wikipedia.org/wiki/Catalonia). For those of you who don't know about it, a brief summary of its [history](http://en.wikipedia.org/wiki/History_of_Catalonia):<!-- more -->
+Let's spur some controversy! Outside Spain very few know about the reality of [Catalonia](http://en.wikipedia.org/wiki/Catalonia). For those of you who don't know about it, a brief summary of its [history](http://en.wikipedia.org/wiki/History_of_Catalonia):
+
+<!-- more -->
 
 + Created in the medieval age, like most kingdoms of Europe, as part of the [Crown of Aragon](http://en.wikipedia.org/wiki/Crown_of_Aragon).
 + Developed as a maritime power, expanding in the Mediterranean and owning islands like Sicily. Its army, the [Almogavars][2], have an interesting story.

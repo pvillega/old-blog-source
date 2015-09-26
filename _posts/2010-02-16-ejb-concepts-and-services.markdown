@@ -8,7 +8,9 @@ image:
   feature: background.jpg
 ---
 
-This page contains a brief summary of **EJB 3.0 Services** and related concepts. It only gives basic information, for more details about life cycle and other functionalities check the EJB 3.0 reference or some book like **EJB3 in Action**. <!-- more -->
+This page contains a brief summary of **EJB 3.0 Services** and related concepts. It only gives basic information, for more details about life cycle and other functionalities check the EJB 3.0 reference or some book like **EJB3 in Action**. 
+
+<!-- more -->
 
 Next I will describe some key concepts related to EJB 3.0
 

@@ -8,7 +8,9 @@ image:
   feature: background.jpg
 ---
 
-This page contains a brief summary of **Java Persistence API (JPA)**. It only gives basic information, for more details about life cycle and other functionalities check the EJB 3.0 reference or some book like **EJB3 in Action**. <!-- more -->
+This page contains a brief summary of **Java Persistence API (JPA)**. It only gives basic information, for more details about life cycle and other functionalities check the EJB 3.0 reference or some book like **EJB3 in Action**.
+
+<!-- more -->
 
 Persistence is probably one of the biggest concerns of most enterprise applications. Data is key and we have to be sure it's consistent and our application can manage its changes properly. To that end lots of alternatives have been developed, with O/R mapping systems taking the led in the latest years due to the benefits of using an intermediate API that's closer to the OO model used in the business layer instead of direct interaction with the RDBMS.
 

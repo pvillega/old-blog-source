@@ -7,7 +7,9 @@ tags: [java]
 image:
   feature: background.jpg
 ---
-Java 7 will be released [soon](http://www.datamation.com/applications/java-7-release-nears.html), so it's time to check what's new. The official announcement is [here](http://docs.oracle.com/javase/7/docs/technotes/guides/language/enhancements.html). A list of the new additions to our beloved JVM follows: <!-- more -->
+Java 7 will be released [soon](http://www.datamation.com/applications/java-7-release-nears.html), so it's time to check what's new. The official announcement is [here](http://docs.oracle.com/javase/7/docs/technotes/guides/language/enhancements.html). A list of the new additions to our beloved JVM follows: 
+
+<!-- more -->
 
 + **Binary literals**: from now on basic numeric types (byte, short, int, long) can be specified as binary numbers using the prefix 0b or 0B
 + **Underscores in literals**: for readability purposes now we can use underscores to mark numbers. You can put them in any place that helps you to read the number better.

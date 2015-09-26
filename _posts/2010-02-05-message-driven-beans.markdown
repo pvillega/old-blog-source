@@ -7,7 +7,9 @@ tags: [ejb, java]
 image:
   feature: background.jpg
 ---
-This page contains a brief summary of **EJB 3.0 Message-Driven Beans (MDB)**. It only gives basic information, for more details about life cycle and other functionalities check the EJB 3.0 reference or some book like **EJB3 in Action**. <!-- more -->
+This page contains a brief summary of **EJB 3.0 Message-Driven Beans (MDB)**. It only gives basic information, for more details about life cycle and other functionalities check the EJB 3.0 reference or some book like **EJB3 in Action**. 
+
+<!-- more -->
 
 Message-Driven Beans are an abstraction over Java Messaging Service (JMS). They are used to send and receive messages in your application without having to know all the details about JMS. That said a good understanding of JMS is important for the correct use of MDB. The advantages of MDB over standard JMS coding are the services provided by the container (like pooling) and the reduction on code size due to automation of tasks.
 

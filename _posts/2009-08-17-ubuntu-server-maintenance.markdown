@@ -7,7 +7,9 @@ tags: [ubuntu, server]
 image:
   feature: background.jpg
 ---
-This guide will show some basic stuff you might need to maintain an Ubuntu server. You might not need all of them, but thy are handy enough and I've had to use them at least once.<!-- more -->
+This guide will show some basic stuff you might need to maintain an Ubuntu server. You might not need all of them, but thy are handy enough and I've had to use them at least once.
+
+<!-- more -->
 
 ## Secure a fresh Ubuntu installation (via [Mensk](http://www.mensk.com/webmaster-toolbox/perfect-ubuntu-hardy-nginx-mysql5-php5-wordpress/))
 

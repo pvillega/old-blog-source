@@ -17,13 +17,13 @@ I guess first I should explain why would I use Emacs when there are products lik
 
 * IDEA sometimes shows misleading errors with Scalaz. Add some EitherT or similar to your code and suddenly correct code that is built by Sbt with no complains is flagged red by IDEA. This is because they use their own compiler, and although it seems a minor issue it can become annoying (is this IDEA acting or did I break it?) and fixing it requires adding explicit type annotations to your code, which means more verbosity and less readable code.
 
-* Resource efficiency. This last summer, due to me changing jobs, I had to bring back to life my 7 year old desktop with its non-ssd hard drive and only 4 Gb of ram. Trying to code in it was extremely annoying. I had only IDEA, a browser and a terminal open, but it felt clunky and focussing was hard due to constant system slowdowns. Replacing IDEA by a simple text editor helped a lot, but there was a lack of syntax highlighting and other tooling I had got used to. I don't know if/when I may find myself in a similar situation again, so being comfortable with a leaner IDE has become relevant.
+* Resource efficiency. This last summer, due to me changing jobs, I had to bring back to life my 7 year old desktop with its non-ssd hard drive and only 4 Gb of ram. Trying to code in it was extremely annoying. I had only IDEA, a browser and a terminal open, but it felt clunky and focussing was hard due to constant system slowdowns. Replacing IDEA by a simple text editor helped a lot, but there was a lack of syntax highlighting and other tooling I was used to. I don't know if/when I may find myself in a similar situation again, so being comfortable with a leaner IDE has become relevant.
 
-* [RSI](http://www.nhs.uk/conditions/Repetitive-strain-injury/Pages/Introduction.aspx). Luckily I'm not suffering from it but I'm a frequent patient of physiotherapy due to heavy mouse use harming my shoulders. I've been told repeatedly that Emacs is a great environment to reduce these muscular issues, better than IDEA, so it's worth the effort.
+* [RSI](http://www.nhs.uk/conditions/Repetitive-strain-injury/Pages/Introduction.aspx). Luckily I'm not suffering from it but I'm a frequent customer of physiotherapy due to heavy mouse use harming my shoulders. I've been told repeatedly that Emacs is a great environment to reduce these muscular issues, better than IDEA, so it's worth the effort.
 
-* I don't mind the new [payment policy](https://www.jetbrains.com/company/press/pr_030915.html) of Jetbrains; I've been paying for my license for years and renewing for each new version, so it would make no difference to me. But this highlights the dangers of being tied to a proprietary tool; if we believe in the software craftsmanship movement and we care about our tools, we need full control on them.
+* I don't mind the new [payment policy](https://www.jetbrains.com/company/press/pr_030915.html) of Jetbrains; I've been paying for my license for years and renewing for each new version, so it would make no difference to me. But the change highlights the dangers of being tied to a proprietary tool and unexpected changes to them. If we believe in the software craftsmanship movement and we care about our tools, we need full control on them.
 
-* Let's be honest, knowing Emacs sounds cool. I may fail on that and realise I'm not the nerd I expected to be, but it's worth the test ;)
+* Let's be honest, knowing Emacs sounds cool. I may fail on the task and realise I'm not the nerd I expected to be, but it's worth the test ;)
 
 ## Environment
 
@@ -33,7 +33,7 @@ There are several Emacs packages you can choose from, the one I've been recommen
 
 For Scala goodness I'll use [Ensime](https://github.com/ensime) and its Emacs plugin.
 
-Any other plugins I find useful will be listed at the end.
+I won't research any other plugins by now, geting used to Emacs is enough.
 
 ## Installing Spacemacs
 
@@ -93,9 +93,7 @@ To work with a Scala project you will need to create a `.ensime` file by running
 
 	sbt gen-ensime
 
-At the root. 
-
-To load Ensime, type `SPC : ensime` and wait until the environment is configured, which may take a while the first time.
+At the root.  To load Ensime, type `SPC : ensime` and wait until the environment is configured, which may take a while the first time.
 
 ## Learning Spacemacs
 

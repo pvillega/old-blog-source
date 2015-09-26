@@ -7,7 +7,9 @@ tags: [scala, coursera]
 image:
   feature: background.jpg
 ---
-Scala is growing, a lot. The (relatively) recent [investment of $14M](http://blog.typesafe.com/typesafe-announces-14m-series-b-financing) in the company ensures that the language will be taken care of and any remaining issues (like some necessary improvements for the IDE) tackled. Scala 2.10 is [around the corner](http://www.scala-lang.org/node/12797) and with it all the performance and APi improvements. And [Play](http://www.playframework.org/) is healthier than ever. Good times to be a Scala fan.<!-- more -->
+Scala is growing, a lot. The (relatively) recent [investment of $14M](http://blog.typesafe.com/typesafe-announces-14m-series-b-financing) in the company ensures that the language will be taken care of and any remaining issues (like some necessary improvements for the IDE) tackled. Scala 2.10 is [around the corner](http://www.scala-lang.org/node/12797) and with it all the performance and APi improvements. And [Play](http://www.playframework.org/) is healthier than ever. Good times to be a Scala fan.
+
+<!-- more -->
 
 Another big step to make Scala more popular has been the [Functional Programming in Scala course from Coursera](https://class.coursera.org/progfun-2012-001/class/index). For people like myself who  learned the language via some book and StackOverflow questions, it's been a very welcomed training to ensure Scala foundations were good enough and to polish the functional approach to coding.
 

@@ -10,7 +10,11 @@ image:
 
 **TL;DR:** Clone [Ansible for Play Framework](https://github.com/pvillega/ansible-ec2-play) to automate the task of deploying Play 2.x projects from a git repository into an EC2 instance.
 
-As many developers I'm not a good sysadmin. That's why I was happy to see the raise of PaaS like [Heroku](http://www.heroku.com/), which facilitated deploying a webapp without having to spend time in sysadmin tasks which I didn't know how to do correctly and which took me too much time. <!-- more --> Unfortunately, as with most abstractions, the PaaS environments are simple to use but also quite limited in options. Heroku offering of 512Mb per dyno plus limitations on what you can do can be a problem, and the third party addons get expensive quickly. Then you have Amazon EC2, cheaper and quite flexible, but in exchange you need a bit more of "sysadmin knowledge". Not a big deal for apps like this blog, running in a Micro instance, but if your app is bigger and spans several servers, it may become time consuming.
+As many developers I'm not a good sysadmin. That's why I was happy to see the raise of PaaS like [Heroku](http://www.heroku.com/), which facilitated deploying a webapp without having to spend time in sysadmin tasks which I didn't know how to do correctly and which took me too much time.
+
+<!-- more -->
+ 
+Unfortunately, as with most abstractions, the PaaS environments are simple to use but also quite limited in options. Heroku offering of 512Mb per dyno plus limitations on what you can do can be a problem, and the third party addons get expensive quickly. Then you have Amazon EC2, cheaper and quite flexible, but in exchange you need a bit more of "sysadmin knowledge". Not a big deal for apps like this blog, running in a Micro instance, but if your app is bigger and spans several servers, it may become time consuming.
 
 I wanted to automate the task of managing the server so I did not have to worry too much about it. I looked at both [Chef](http://www.opscode.com/chef/) and [Puppet](https://puppetlabs.com/), but somehow I couldn't bring myself to spend enough time with them. The release of [Amazon OpsWorks](http://aws.amazon.com/opsworks/) raised the issue again as they don't have a Play Framework 2 script ready out of the box, but it was hard to try to focus on that task.
 

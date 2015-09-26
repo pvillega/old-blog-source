@@ -7,7 +7,9 @@ tags: [barcelona]
 image:
   feature: background.jpg
 ---
-I'm from [Barcelona](http://www.flickr.com/groups/barcelona/pool/). This simple and straightforward fact always raises expressions of incredulity amongst the people I meet here in Dublin when I tell them I live here:<!-- more -->
+I'm from [Barcelona](http://www.flickr.com/groups/barcelona/pool/). This simple and straightforward fact always raises expressions of incredulity amongst the people I meet here in Dublin when I tell them I live here:
+
+<!-- more -->
 
 ..."What are you doing here?"
 

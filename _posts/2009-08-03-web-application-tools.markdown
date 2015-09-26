@@ -11,7 +11,9 @@ When developing your own web application, specially if you want to earn
 money with it, some information is priceless.  In this page I will list
 some tools and tips I’ve found around the net that can help you to
 improve your product. They are generic tips, not linked to any language
-nor platform, just ways to enhance your product. <!-- more -->
+nor platform, just ways to enhance your product. 
+
+<!-- more -->
 
 **Creating your site**
 

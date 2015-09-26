@@ -7,7 +7,9 @@ tags: [nginx, ubuntu, redmine]
 image:
   feature: background.jpg
 ---
-Originally I wanted to install Launchpad on my server to manage my projects. As of 17th of August of 2009, Launchpad is not yet ready for production. The only way to install it is using an script, only available for Ubuntu 9.04, which doesn't work too well on a server. I'll keep an eye on it as I like the way Canonical does things (and applications), but in the meantime I decided to use [Redmine](http://www.redmine.org/) as I found Trac lacking on some areas. <!-- more -->
+Originally I wanted to install Launchpad on my server to manage my projects. As of 17th of August of 2009, Launchpad is not yet ready for production. The only way to install it is using an script, only available for Ubuntu 9.04, which doesn't work too well on a server. I'll keep an eye on it as I like the way Canonical does things (and applications), but in the meantime I decided to use [Redmine](http://www.redmine.org/) as I found Trac lacking on some areas. 
+
+<!-- more -->
 
 ## Redmine
 

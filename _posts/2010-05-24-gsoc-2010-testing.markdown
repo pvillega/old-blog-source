@@ -8,7 +8,9 @@ image:
   feature: background.jpg
 ---
 
-During this time I did not update the blog, I was finishing my [GSOC 2010 project](https://wiki.duraspace.org/display/GSOC/GSOC10+-+Add+Unit+Testing+to+Dspace). You can find more technical details [here](https://wiki.duraspace.org/display/GSOC/GSOC+2010+Unit+Tests+-+Technical+documentation).<!-- more -->
+During this time I did not update the blog, I was finishing my [GSOC 2010 project](https://wiki.duraspace.org/display/GSOC/GSOC10+-+Add+Unit+Testing+to+Dspace). You can find more technical details [here](https://wiki.duraspace.org/display/GSOC/GSOC+2010+Unit+Tests+-+Technical+documentation).
+
+<!-- more -->
 
 So, how's been the project? I think this will sum it up:
 

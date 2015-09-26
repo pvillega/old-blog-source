@@ -7,7 +7,9 @@ tags: [scala, java]
 image:
   feature: background.jpg
 ---
-Soon Java 7 will be released. A bit delayed, yes, but it's here. Even so the question lingers: is it enough? I believe the answer nowadays is NO, but of course this is an open discussion in which each developer will have a different (and valid) opinion as per each one's background. Let's give some arguments for the no, then. Let's talk about [Scala](http://www.scala-lang.org/). <!-- more -->
+Soon Java 7 will be released. A bit delayed, yes, but it's here. Even so the question lingers: is it enough? I believe the answer nowadays is NO, but of course this is an open discussion in which each developer will have a different (and valid) opinion as per each one's background. Let's give some arguments for the no, then. Let's talk about [Scala](http://www.scala-lang.org/). 
+
+<!-- more -->
 
 ## Why Scala?
 

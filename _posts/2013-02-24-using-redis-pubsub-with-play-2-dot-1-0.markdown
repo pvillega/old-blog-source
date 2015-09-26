@@ -10,7 +10,9 @@ image:
 
 Last week I was experimenting a bit with [Redis](http://redis.io/) and its [Publish-Subscribe](http://redis.io/topics/pubsub) module. The idea was to try to implement a chat with it (something I'll need for my next project) and from all the options I evaluated this seemed the best. Loving Redis so far, whoever called it the swiss-knife of databases was completely right.
 
-<!-- more -->As to be expected with programming I had some trouble, in this scenario using Redis PubSub with Play 2.1.0 blocked the application. So I decided to publish this in case someone else has the same issue. If you don't want to read the details just go to the [GitHub repository](https://github.com/pvillega/play21-redis-pubsub) and clone the source. It contains a very simple application in which Play subscribes to a Redis channel and sends messages to it via Akka actors, while using a listener to notify about reception of the same messages. The `Readme` file gives more detail on how it works.
+<!-- more -->
+
+As to be expected with programming I had some trouble, in this scenario using Redis PubSub with Play 2.1.0 blocked the application. So I decided to publish this in case someone else has the same issue. If you don't want to read the details just go to the [GitHub repository](https://github.com/pvillega/play21-redis-pubsub) and clone the source. It contains a very simple application in which Play subscribes to a Redis channel and sends messages to it via Akka actors, while using a listener to notify about reception of the same messages. The `Readme` file gives more detail on how it works.
 
 So now let's talk about Redis and the issue I had.
 

@@ -7,7 +7,9 @@ tags: [lean startup, waste, organization]
 image:
   feature: background.jpg
 ---
-I recently finished reading [The Lean Startup](http://theleanstartup.com/), a (relatively) new approach on development and innovation on software companies. An interesting and recommended reading for anyone involved in software development.<!-- more -->
+I recently finished reading [The Lean Startup](http://theleanstartup.com/), a (relatively) new approach on development and innovation on software companies. An interesting and recommended reading for anyone involved in software development.
+
+<!-- more -->
 
 The book is not new, the *Lean Startup* idea was 'released' on 2011, and I had become familiar with several of the concepts explained through posts on Hacker News or other sources. Unfortunately, the summaries and excerpts that you can get online are not the same as reading the book: it contains examples and necessary context that make it much more enlightening. Given that I love to read, not purchasing the book earlier was a big mistake (lazy me!). If you are in the same situation, vague knowledge on the subject but didn't read the book, please do yourself a favour and read it. It's around 300 pages, it won't take you long.
 

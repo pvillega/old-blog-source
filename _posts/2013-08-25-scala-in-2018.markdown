@@ -8,7 +8,9 @@ image:
   feature: background.jpg
 ---
 
-[ScalaDays 2013][4] happened this past June and the presentations are available at [Parleys][3]. If you go to the [ScalaDays 2013 channel][2] you can see all of them, and many are completely worth your time.<!-- more -->
+[ScalaDays 2013][4] happened this past June and the presentations are available at [Parleys][3]. If you go to the [ScalaDays 2013 channel][2] you can see all of them, and many are completely worth your time.
+
+<!-- more -->
 
 I've taken a while to catch up with the presentations (too many things going on this summer), but one talk that I found very inspiring was the one by Rod Johnson, of Spring fame and currently in Typesafe board, about the future of Scala. The talk is called [Scala in 2018][1] and, long as it is, I'd recommend you to watch it.
 

@@ -8,7 +8,9 @@ image:
   feature: background.jpg
 ---
 
-Scala gives the developer the possibility of using [Enumerations](http://www.scala-lang.org/api/current/index.html#scala.Enumeration). If they should be used or if [Case Classes](http://docs.scala-lang.org/tutorials/tour/case-classes.html) are better is a debate I'm not going to start here. They exist and they can be used.<!-- more --> 
+Scala gives the developer the possibility of using [Enumerations](http://www.scala-lang.org/api/current/index.html#scala.Enumeration). If they should be used or if [Case Classes](http://docs.scala-lang.org/tutorials/tour/case-classes.html) are better is a debate I'm not going to start here. They exist and they can be used.
+
+<!-- more --> 
 
 The reason I mention enumerations is that in a personal project (which I hope to publish soon, but I digress) I've been using them inside some *case classes*. In the same project I'm using [Play-JSON](https://github.com/mandubian/play-json-alone), a standalone version of the [Play Framework JSON libraries](http://www.playframework.com/documentation/2.2.x/ScalaJson), which turn working with JSON into a boilerplate-free pleasure. All was grand until I added my first enumeration as a parameter in a case class. The compiler started to complain and it took me a while to find how to fix it. 
 

@@ -7,7 +7,9 @@ tags: [scala, play2, playframework, iteratee]
 image:
   feature: background.jpg
 ---
-From time to time I like to test some new functionality of [Play 2.0](http://www.playframework.org/). Creating a tiny for-fun project allows me to see that functionality in action, to solve the initial pitfalls related to it and to have a basic sample for later on.<!-- more -->
+From time to time I like to test some new functionality of [Play 2.0](http://www.playframework.org/). Creating a tiny for-fun project allows me to see that functionality in action, to solve the initial pitfalls related to it and to have a basic sample for later on.
+
+<!-- more -->
 
 With Play 2.1 coming closer, and seeing all the new stuff in it (Slick, Scala 2.10, etc) I wanted to test some of the features that I've not been able to use in a "real project", especially the ones related to Real Time web. When thinking about what to implement I remembered an issue a friend had in his company, an ETL-like process that had to receive data (massive amounts) on one end and store it in several location after processing the data. While not in the mood to create a real system which would be quite complex, having to manage queues and ensuring messages were delivered, that inspired me to plan a minor project in which I could use several interesting technologies: Iteratee, MongoDB, Redis and Akka actors. I've not used any of them very often, so I was sold to the idea :)
 

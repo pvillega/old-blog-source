@@ -7,7 +7,9 @@ tags: [java, sonar, hudson]
 image:
   feature: background.jpg
 ---
-Due to my current work at [Google Summer of Code 2010](https://wiki.duraspace.org/display/GSOC/GSOC10+-+Add+Unit+Testing+to+Dspace) I've been setting up a small CI system for my personal use. Yes, it is an overkill, but I wanted to test it and, truth be told, the statistics provided by tools like [Sonar](http://www.sonarsource.org/) and [Hudson](http://hudson-ci.org/) are priceless, they show you many potential errors you may have in the code, coverage you are missing... to express it in my native tongue: "és la óstia nen"<!-- more -->
+Due to my current work at [Google Summer of Code 2010](https://wiki.duraspace.org/display/GSOC/GSOC10+-+Add+Unit+Testing+to+Dspace) I've been setting up a small CI system for my personal use. Yes, it is an overkill, but I wanted to test it and, truth be told, the statistics provided by tools like [Sonar](http://www.sonarsource.org/) and [Hudson](http://hudson-ci.org/) are priceless, they show you many potential errors you may have in the code, coverage you are missing... to express it in my native tongue: "és la óstia nen"
+
+<!-- more -->
 
 I asked my friend Google for a guide on how to set them up together and it came up with this one. Easy five steps to set them up (check the link for more detail):
 
