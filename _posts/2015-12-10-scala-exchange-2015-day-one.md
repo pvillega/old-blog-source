@@ -352,6 +352,10 @@ We potentially have a complex structure of conjunctions and disjunctions over pa
 
 With these definitions we can do as we did with I18N, reducing the point of failure to `parse` (Note: you will need to see the slides/video to follow the code that generates all this, can't reproduce in this summary).
 
+In summary: multiple failure points increase the burden on error handling. Instead we want to handle all failures together, up-front. Use total functions and many more operations are now dafe, with more code becoming free of distracting error handling. We have reduced the surface of failure.
+
+Predictions: dependent types will be increasingly important in the future of typed languages. Work will be around make it easier to write. In Scala, error messages CAN be improved, we can have better tooling to manage them. Hopefully we will have more code that consists entirely of total functions, with very reduce surface for error. Lastly, this additional information provided by the types can offer opportunities to improve performance.
+
 ***
 
 # Lighting Talks - 1
