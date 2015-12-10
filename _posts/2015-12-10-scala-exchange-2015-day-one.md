@@ -218,9 +218,65 @@ Command validations can usually be asynchronous, but events must be pure and alw
 
 By [Jonas Bonér](https://twitter.com/jboner)
 
+If your application is not available, doing something useful, nothing else matters: quality, speed, etc.
+
+"It isn't about how hard you hit, is about how hard can you be hit and keep moving forward. [...] That's how winning is done." (from Rocky Movie)
+
+Fault tolerance is not enough. Resilience is beyond fault tolerance, and it's all that matters. Resilience is the ability to spring back into shape, to recover quickly from difficulties. Software today can be incredibly complex, and we need to understand resilience in the context of these complex systems.
+
+A complicated system has multiple small parts that interact to do something. It can be understood, although it is hard. A complex system is made of many similarly interacting parts with simple rules (ala Game of Life). Those rules define emerging properties which are impossible to understand. You can understand individual rules, but not the full interactions and outcomes. Complicated is not the same a Complex.
+
+Complex systems run in degraded mode. Complex systems run as broken systems. In a Complex system there is something failing somewhere, always! And humans make things worse, as complex systems are counterintuitive and when we use intuition we usually end up worsening the existing issues.
+
+Complex systems operate at the edge of failure. There is the economic failure boundary, where you can run out of business. There is the unacceptable workload boundary where you can't cope with the work. There is the accident boundary, when an undefined event causes us to fail. The operating point moves between these boundaries, and if it crosses one of them we fail.
+
+This means we have 3 pressures on the operating point. Management tries to minimise economic failure, workload tends to least effort, and as a result we are pushing the point towards the accident boundary which is undefined. We try to counteract with tools, systems, but this keeps happening as we can't understand all implications. The only solution is to add an error margin to protect us from failure, so when we get into dangerous territory we can act before we fail.
+
+The problem is that we don't know much, if anything, about the failure boundary so it is hard to define a proper error boundary. And we keep pushing it closer to the failure boundary as the system looks stable to us, until the point where the boundary is not helping anymore and we fail.
+
+We must embrace failure. We know complex systems always work as broken system, so we need to accept failure as normality. We must understand that resilience is by design, it can't be bolted in afterwards. 
+
+"In the animal kingdom simplicity leads to complexity which leads to resilience". Complexity may help building resilience. Another example on how complexity builds resilience is how the current world protects us: it feeds us, give sus shelter, etc. And it is very complex. So we can learn about resilience in both biological and social systems:
+
+- Feature diversity and redundancy
+- Interconnected network structure
+- Wide distribution
+- Capacity to self-adapt and self-organise
+
+How does this apply to computer systems? We need to change the way we manage failure. Failure is natural and expected. One way: Let it crash, like Erlang does.
+
+So we have Crash Only software (name of a paper). Stop is equal to crash safely. Start is equal to recover fast from a crash. We can apply this recursively and turn the big sledgehammer into a scalpel to tolerate failures at many levels. It is recommended to read the paper.
+
+We need a way out of the 'State Tar Pit' (another paper). A lot of failure is related to data (partial data, wrong data, etc). We have input data, provided by customers, and derived data, data we compute from the input data. The critical one is input data, that we need to keep and take care of to avoid annoying users.
+
+In the traditional way of managing state a error at the end of an input path will cause all the path to fail and we will lose the input data, which is an utterly broken way to manage this. We react to this by abusing defensive programming, adding try-catch blocks everywhere, etc.
+
+"Accidents come from relationships, not broken parts." A Sane failure model means that Failures need to be:
+
+- Contained to avoid cascading failures
+- Reified as messages
+- Signalled asynchronously
+- Observed by at least 1 actor, up to N observers
+
+Basically, the bulkhead pattern used by ship industry. If a compartment breaks the ship is not affected. But we can still do better, by adding Supervision: observe and manage failures from a healthy context. Components that fail should notify the Supervisor so something can be done about it. An 'Onion Later State & Failure management' or 'Error Kernel pattern'. The kernel delegates all work and supervises so the task is performed correctly, managing any errors as necessary. We apply this recursively, with a layer managing failures of the underlying level.
+
+We can't put all eggs in same basket. We need to maintain diversity and redundancy. Servers crash, AWS goes down. We need multiple servers, even multiple data centers, which means running a distributed system. And they should be decoupled in time (to enable concurrency) and space (enables mobility of nodes). This gives a very solid base for resilience.
+
+We need to decompose systems using consistency boundaries. We need to think about isolation of components. We need to start with the weakest consistency guarantees we can, and add stronger ones as we go if we need them. The less ACID and coordination you need, the better. Within the boundary we can have strong consistency (example: actors are single threaded with an inbox). Between boundaries it is a 'zoo', all bets are off, we need to manage failure as described above. But that is good, as weak coupling and other properties of the 'zoo' enhance our resilience.
+
+Remember: strong consistency is the wrong default, it adds too strong coupling, but what we need is to decompose systems and create safe islands (consistency boundaries).
+
+To conclude, let's talk about resilient protocols, the way to manage the 'zoo' outside consistency boundaries. They depends on asynchronous communication and eventual consistency. They must embrace ACID 2.0 (Associative, Commutative, Idempotent, Distributed); they must be tolerant to message loss, reordering, and duplication. 
+
+Remember: Complex systems run as borken systems. Something is always failing. Resilience is by design. Without resilience, nothing else matters.
+
+***
+
+# A purely functional approach to building large applications 
+
+By Noel Markham
+
 Coming Soon!
-
-
 
 
 
