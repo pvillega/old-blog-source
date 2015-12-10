@@ -358,21 +358,76 @@ Predictions: dependent types will be increasingly important in the future of typ
 
 ***
 
-# Lighting Talks - 1
+# Lighting Talks - Track 1
 
 By [Andrew (Gus) Gustafson](https://twitter.com/ozgus4000) - Making your life easier with macros
 
+Problem: write out a class using snake case JSON field names. By default you need to override a method provided by some JSON library to provide what you want. Or for example, if you want to convert an ADT to JSON, to process the parent sealed trait you need a (potentially big) pattern match for every possible child.
+
+Macros are a simple way to generate this 'boilerplate' code, following a DRY principle. Write macro once, apply everywhere, without duplicating code. 
+
+Tips and Tricks for Macros: 
+
+- `println` is your friend. Auto-complete too. Keep typing until something good happens
+- macro code needs to be in a separate codebase than your domain model
+
+(Code example follows)
+
+
+# Lighting Talks - Track 1
+
 By [Jamie Pullar](https://twitter.com/jamiepullar) - Handling Partially Dynamic Data
+
+Subtitle: exploring a DSL approach to lenses with Jsentric and Dsentric.
+
+Examples of partially dynamic data:  given a JSON object we validate only fields of interest in the server. Or microservices supporting arbitrary content structures, they only care about specific fields and ignore the rest of the data.
+
+The first challenge: how do we deserialise data to work with it? Use type safe structures (ADT vs Map[String, Any]).
+
+How to extract the data we want? We can use Lenses to extract the fields we want. Lenses allow us to target parts of the data and operate with it. The issue is that it can become a bit unwieldy code wise.
+
+To solve code verbosity we introduce a Contract structure, which defines the structure we care about. Then we can use it to pattern match over the input data (for example JSON) and work with the relevant values, while not relevant data is silently ignored. The Contract allows us to read, modify, and delete the relevant values. Using Shapeless we can improve usability by providing helpers which reduce boilerplate even more.
+
+We can extend the Contract to add validations, as precise as we need (example: age > 0 and < 150). These validations can be type safe. Further extension allows us to build querying over the structures, so we can filter the data. All this is possible because the Contract is abstracting the data structure from our business logic. 
+
+Dsentric is custom contract configuration with Monocle. 
+
+# Lighting Talks - Track 1
 
 By [Mikael Valot](https://twitter.com/leakimav) - Flexible data structures in Scala
 
+(Talk heavy on code examples, check slides for more clarity)
+
+Project `Strucs`. Case classes are not composable. How can I define common fields only once without using Shapeless records?
+
+Structs enables you to concatenate case classes via `+` operator to generate new types. So you can create one case class per each field, and concatenate to generate a composite type. Compiler checks to avoid field duplication. You can compose these struct types, so having a `Person` and an `Address` you can then have a `Person with Address` that includes values of both.
+
+These compositions can be used in structural types, so you can define a type parameter `T <: Age with Name` to ensure type safety of your operations.
+
+Under the hood, a Struct is a `Struct[F](private val fields: Map[StructKey, Any])`, where all access to the map is via parametrised types, for example `get[T](implicit k: StructKeyProvider[T], ev: F <:< T): T`. This should avoid the issues usually related to using `Any`.
+
+Struct enables us to provide automatic JSON encode/decode via macros.
+
+# Lighting Talks - Track 1
+
 By [Nick Pollard](https://twitter.com/nick_engb) - More Typing, Less Typing - Driving behaviour with types
 
+Scala has a very powerful type system. What is it good for? Usually we though about Validation, what about generating behaviour? We do that all the time, for example when we overload methods or we use Typeclasses.
 
-Coming Soon!
+Typeclasses revisited: interface across type, common capability but varied behaviour by type. Each instance provides behaviour, implemented using `trait` and used via `implicit`. Instances are defined as implicit values and def. Implicit def can take another implicit as parameter.
 
+When searching for an implicit the compiler can chain successive implicits if it will produce the required type.
 
+How can we handle more complex types via implicits? We need an algebra for types. An algebra is just a group of objects and operators you can use on those objects. Like numbers and mathematical operators, or types and type operators.
 
+How do we operate on types? What is a type? A type can be seen as a set of values. Example: `Boolean` is `Set(true, false)`. `Char` is `Set('a', 'b', ...)`. So we can use Set operators, of which we care about two, `product` (cartesian product) and `coproduct` (also named disjoint union, like Scalaz \/, or sum). 
 
+With this we can express types in the terms of operators. `Option[A] = () \/ A`. 
 
+If we can model types as operators in simple types, we can construct typeclasses from that. This is what Shapeless does for this.
 
+Shapeless uses HList (heterogeneous lists). Equivalent to nested tuples `(A, (B, C))`. The base case is HNil, we can recurse over the list until we hit HNil. Shapeless also provides CoProduct, similar to Tuples of `\/` (simplifying).
+
+How is that useful? It allows us, for example, to generate parsers for any type of case class by treating them as HList. Shapeless automatically turns ADTs into HList (it has implicits and macros to do that). This reduces boilerplate, we write a generic parser once and we can apply it to any present or future ADT we use.
+
+ 
