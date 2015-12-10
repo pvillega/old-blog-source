@@ -274,7 +274,41 @@ Remember: Complex systems run as borken systems. Something is always failing. Re
 
 # A purely functional approach to building large applications 
 
-By Noel Markham
+By [Noel Markham](https://twitter.com/noelmarkham)
+
+This talks follow a bit on his talk last year about 'Introduction to Scalaz'. We will look at tools and techniques and how to do things in a more purely functional manner. (Talk will be heavy on screen-coding, so please watch the video! I will try to summarise the concepts explained, but without seeing the code it may not make too much sense)
+
+Start by breaking rules and using `import scalaz._; import Scalaz._` and other generic imports. Sorry Jessica Kerr ;)
+
+Starting point are a couple of API which are not too flexible but we can't modify, they are external API.
+
+First concept: let's talk about [`Markov Chains`](https://en.wikipedia.org/wiki/Markov_chain). We want to build a structure to, given 2 words, try to guess what would be the next word and a function that would use that to generate possible sentences. We could use a method that returns a `Future`, and use `Await.result` over the external API and then use the result to the generator. We can improve that by using a for-comprehension. 
+
+We can improve the code more by extracting the configuration. Side concept: we can compose functions (f andThen g), but a function can be considered a Functor, so it can be mapped over! So we can group all our configuration into a case class and create functions `Config => String` or `Config => Int` to extract config. And we can group those functions to extract several values at once. We can go further and use functions as Monads to extract config (via the functions) using a for-comprehension. 
+
+Given all we did above, we can create functions that given a config (as a parameter) return a function that will return what we want (tweets, other data). We can do the same for the string generator, to make it depend on config. And then we can use both in a for-comprehension as functions are Monads, although we still have the Future type around. 
+
+We can tackle that Future type by wrapping the function with a Reader type. Then we need to understand the concept of Monad transformers, which allows us to *unwrap* a monad to interact with it's element. For example, given a `Future[Option[Int]]` we can interact with the `Option` directly, without having to call a method in `Future`. In Scalaz that would be `OptionT[Future, Int]`. Given Monad transformers, we can then work with `ReaderT` which will allow us to ignore the Future in our methods until we really want to. This gives us a `ReaderT[Future, String, Int]` which allows us to work with all the elements of our computation independently ([kleisli](https://en.wikipedia.org/wiki/Kleisli_category)).
+
+Going back to our example, we can then change our functions to become `kleisli` for `ReaderT[Future, Config, List[Tweet]]` or `ReaderT[Future, Config, String]`. We have separated constituent types and we can deal with each one as we need to. Which helps us produce a very sane for-comprehension, very legible and understandable. And we get as result a `Future[String]` but that is at the end of the calculation, so we block at a point after we defined all the task to do, decoupling task from execution.
+
+An advantage is that this makes this code easier to test. Our methods take functions as arguments, a home-grown dependency injection system where we can plug anything we want (respecting types!) so we can test the code without interacting with 3rd party services or doing other steps of the process. No need to mock, just use simple stubs.
+
+A suggestion to test is to use ScalaCheck. With ScalaCheck you suggest properties for your code, and the framework makes sure your properties hold by trying to find values that break them. (Also adding a dash of Shapeless, because why not). With this we can, for example, make sure our code doesn't modify the text of the tweets in any way by default. 
+
+We can still do better, let's try to abstract over ReaderT. Right now we are only using ReaderT as Mond, so we may as well replace it by `M[List[Tweet]]` and `M[String]` on our functions. Our for-comprehension doesn't change, but it has other benefits. For example, our test code can be simpler as we can use the `Id` (identity) monad to generate values.
+
+Let's say we now want to add logging to it. How can we tackle this? Let's assume we are given a method `log` that returns a `Future`. We can integrate this as a parameter `String => M[Unit]` and we are done. Except we don't like side-effects and `Unit`. We can wrap the log in a `Writer` which allows us to do an operation and do an additional operation into a secondary store (basically, a log). With this we replace our `Reader` by `Writer` to integrate the logging, but both are Monads so the signatures and for-comprehension don't change, only implementation details. (Note: I may have missed some detail in that last part! Check the video.)
+
+After all this process, we found nice ways to provide configuration, wire functions (akin to dependency injection) and abstract over Monads, all by leveraging the power of libraries like Scalaz, Shapeless, and ScalaCheck. And by using the libraries you reduce boilerplate and make code easier to understand.
+
+**Important Note**: you really need to see the slides with the code to follow the talk fully, very recommended talk if you are interested in FP.
+
+***
+
+# Exploiting Dependent Types for Safer, Faster Code 
+
+By [Jon Pretty](https://twitter.com/propensive)
 
 Coming Soon!
 
