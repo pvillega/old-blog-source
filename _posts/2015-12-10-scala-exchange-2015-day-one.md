@@ -310,6 +310,61 @@ After all this process, we found nice ways to provide configuration, wire functi
 
 By [Jon Pretty](https://twitter.com/propensive)
 
+This is an advanced feature of Scala's type system. Not difficult to use, but writing libraries that use them can be complex.
+
+The 'Slippery road' represent a dynamic language, where you can't control the types and you have no guidance. Throughout the talk an example library will be used: Raptured command-line. 
+
+Example: a bash command
+
+```
+ls -lah --sort time --width=120
+```
+
+We would like to convert that to Scala. We can try to parse the arguments into Scala values. We may even specify a type parameter so the parsing doesn't return a String but an Int. We may want to use several representations for a value (-s, --size). All this an be abstracted further into a value of type `Param[Int]('s', "size")`. Nothing too exciting.
+
+Let's stash that for a moment and talk about Rapture I18N, a library to support I18N Strings in apps. The standard solution is to use string bundles, one per language, managed separately from the code itself. But what if you forget to add a translation for a sentence in a language? You get a runtime error. Rapture I18N embeds the languages in the source and makes the compiler check for completeness.
+
+(Some examples of Rapture I18N follow)
+
+A type behind Rapture I18N is:
+
+```
+class IString[L1] {
+	def |[L2](that: IString[L2]): IString[L1 with L2] = ???
+}
+```
+
+That gives us a type intersection, a type per language, and we track the contents of an IString as if it was a map of language type to string. The intersection type `En with De` means the type is both an `En` and a `De`. In Scala we can create an intersection between any two types, for example: `Int with String`. A type can exists even if we can't have instance of it. 
+
+These kind of types are called `phantom types` which exist purely for compiler benefit, they will never be instantiated. After compilation they get erased, they don't exist in bytecode (type erasure). But the compiler can use them to enforce constraints on other types and to drive implicit resolution.
+
+For example we can use the constraint enforce to make sure `sayHi[Ru]` will fail compilation if we didn't define a `Ru` version of Hi. We can do that by requiring a supertype of the phantom type `V >:T`. Given `En with De`, `En` is a supertype and will compile, but `Ru` is not a supertype and it will fail compilation.
+
+As all accesses are checked at compile time, we know they are safe operations and total functions, which we know won't fail. But we don't know which times we are going to access at compile time, we will know at runtime time. How can we convert the string indicating language from the user into a type? What if they send a request for a language that doesn't exist? 
+
+We can write parsers like `(en | de).parse(inputLang)` which becomes the only point of failure at runtime. We can't avoid that, but all the rest of the code has been checked at compile time, so we know we can handle the exceptional cases in there and do not worry anymore about I18N types. Narrowing failure points is good for programming.
+
+(Quick demo on Rapture I18N follows)  
+
+After the demo, back to the Command Line problem stated at the start. We want to enforce some constrains on the parameters passed to a command line instruction. We can do it naively via pattern matching and for comprehension, but could do better and try to reduce this to a single point of failure as we did with the I18n library.
+
+We potentially have a complex structure of conjunctions and disjunctions over parameter preferences and alternative representations. We can represent them in Scala types, so `A & B & C` becomes `Product[A with B with C]`. `A | B | C` becomes `CoProduct[A with B with C]`. And then we define combinators for `|` and `&` (see slides for definitions, basically pattern matching grouping parameters into `Product` or `CoProduct` instances). The result will be a complex type built following the defined combinations.
+
+With these definitions we can do as we did with I18N, reducing the point of failure to `parse` (Note: you will need to see the slides/video to follow the code that generates all this, can't reproduce in this summary).
+
+***
+
+# Lighting Talks - 1
+
+By [Andrew (Gus) Gustafson](https://twitter.com/ozgus4000) - Making your life easier with macros
+
+By [Jamie Pullar](https://twitter.com/jamiepullar) - Handling Partially Dynamic Data
+
+By [Mikael Valot](https://twitter.com/leakimav) - Flexible data structures in Scala
+
+By [Nick Pollard](https://twitter.com/nick_engb) - More Typing, Less Typing - Driving behaviour with types
+
+
 Coming Soon!
 
 
