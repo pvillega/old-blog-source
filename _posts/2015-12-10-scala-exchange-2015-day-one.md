@@ -55,3 +55,126 @@ Assuming context or acting like someone is stupid for not knowing context is a b
 
 Finally, publish boring Scala code that teaches business domain and how to build useful things to the community. Use that hashtag  #blueSkyScala to spread that knowledge to the community.
 
+
+# Functional Patterns for FP beginners 
+
+By [Clément Delafargue](https://twitter.com/clementd)
+
+(Note: you should watch the video once released to see more detailed examples on the concepts)
+
+Functional programmer, day to day work with Javascript, but what I learned from Scala helped to write better JS. This talk is about simple patterns for FP. Not common abstractions like Functors or Monads, no Category Theory, but the tools we can use to build these abstractions. This is a way (of many possible) to do these things. Customise it to your needs.
+
+Scala documentation in FP refers mostly to Haskell documentation, but if you don't know Haskell that is a problem. Here we want to avoid that and focus on common FP patterns. 
+
+FP (functional programming) being 'programming with values', where everything is an expression and you tweak values to get to the desired result. For example `if` is not a block anymore, is an expression that returns a value. Pattern match is not a substitute for switch, is a way to produce a value.
+
+We have Typed FP in Scala. All your expressions have types and you can type check the results, letting the compiler check the control flow and ensure correctness. 
+
+## Algebraic data types (ADT)
+
+We use Algebraic Design, where you start with values, combine values and get desired values. Your workflow is data driven. So how do we model the data? Via Algebraic data types (ADT).
+
+Algebraic because they have two properties:
+
+- Product types: compound type created by combining two or more types. Example: Tuple; case class User(name: String, age: Int)
+- Sum types (or Co-products): a simple example is a Json value, which can be either a string, object, array or number. A Sum type is a group of values. In Scala this is implemented via a `sealed trait` and we use pattern matching to work with them (deconstruct and inspect structure). Example: 
+
+```
+sealed trait JsonElem
+
+case classe JsonBoolean extends JsonElem
+
+case classe JsonNumber extends JsonElem
+
+```
+
+Pattern matching raises compiler warnings if you forget a member of the Sum, which is handy. In Scala you can also combine Sum types to share elements across types. An example is Json is 'root elements' or Json values (which can be only object or array) vs all possible Json elements.
+
+
+```
+sealed trait JsonElem
+sealed trait JsonValue
+
+case classe JsonBoolean extends JsonElem
+
+case classe JsonNumber extends JsonElem
+
+case classe JsonObject extends JsonElem with JsonValue
+
+case classe JsonArray extends JsonElem with JsonValue
+
+```
+
+OOP makes it easy to add cases, while FP makes it easy to add functions. Compiler helps in both cases, but there is a trade-off for the developer. Thankfully in Scala you can choose the way you want to implement things as it gives both options.
+
+Should you hand roll your own ADT or use generic types (like tuples or Either)? ADT are preferred unless you are deconstructing the result right away, as when the application grows your own ADT will help you more (compiler works for you).
+
+Sum and Product types keep properties of mathematical sum and product, like associativity, exponentials and factorisation. We have neutral value (Unit). For example:
+
+```
+A * 1  => A  and  (A, Unit) => A
+A + 0  => A  and  A | Unit => A
+
+(User("Me", 27), Pet("cat"))  and  UserWithPet("Me", 27, "cat")
+// more examples in the video, watch it
+```
+
+These are equivalent but one gives more information via types:
+
+```
+sealed trait X
+case class Bad(v: String) extends X
+case class Good(v: String) extends X
+
+case class Y(v: String, isGood: Boolean)
+```
+
+Please void booleans in ADT, you want to use the types to provide information. Types make you more precise and allow compiler to type check.
+
+ADT are used to do Domain Driven Design, where you observe your data and build domain based on that. Much better than POJOs.
+
+
+## Programming with Contextualised Values
+
+We can program expressing into types if a computation failed, is asynchronous, etc.
+
+### Error handling
+
+`Option` type is useful when only one thing can go wrong. For example when you parse String to Integer, there is no need of extra precision. It is simple to use, but restricted, if many things can go wrong you are losing information.
+
+`Either` is a Sum type (Left -> Error, Right -> value) which allows you to handle several errors cases. Please use ADT to describe errors as Strings provide less information on the error type. With ADT you can handle all error cases. Beware `Either` is not biased in Scala and doesn't work too well with type inference. You can use `Disjunction` from Scalaz which behaves better and it's biased (defaults to Right and provides flatMap operation to use inside a for-comprehension). 
+
+If chained, both `Either` and `Disjunction` fail on the first error. Sometimes you want to accumulate errors, then you should use `Validation` from Scalaz. The error list is a `NonEmptyList` to ensure we have error messages on failure.
+
+Sometimes you want to accumulate errors, some times you want to fail on first error. Don't flatten your errors, decide what is what you want. 
+
+## Extend types
+
+Type `Monoid` allows you to combine 2 values and provides a neutral element. With subclassing you can't declare a Zero element or extend Standard library classes (they are final). The workaround is to use `traits` that provide the desired behaviour and that you pass as additional parameter to functions.
+
+To avoid the work of explicitly passing that new type as a parameter, you declare the new type as implicit so the compiler autowires the proper implementation. Just be careful with Typeclass convergence where a type could have multiple implementations of the same behaviours, which causes problems.
+
+Simulacrum library helps you creating typeclasses and boilerplate for these types. 
+
+(see examples from the talk when the video is published)
+
+Recommended to read Cats code as it is simple code and will help you understand.
+
+Final tips as we are running out of time:
+
+- Use property testing for everything
+- Separate effects from logic (Free Monads?)
+- Read FP in Scala book
+
+
+
+
+
+
+
+
+
+
+
+
+
