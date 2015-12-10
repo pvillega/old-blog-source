@@ -11,7 +11,7 @@ date: 2015-12-10T09:53:36+00:00
 
 <!-- more -->
 
-## Keynote: Scaling Intelligence: moving ideas forward 
+# Keynote: Scaling Intelligence: moving ideas forward 
 
 By [Jessica Kerr](https://twitter.com/jessitron)
 
@@ -55,6 +55,7 @@ Assuming context or acting like someone is stupid for not knowing context is a b
 
 Finally, publish boring Scala code that teaches business domain and how to build useful things to the community. Use that hashtag  #blueSkyScala to spread that knowledge to the community.
 
+***
 
 # Functional Patterns for FP beginners 
 
@@ -148,7 +149,7 @@ If chained, both `Either` and `Disjunction` fail on the first error. Sometimes y
 
 Sometimes you want to accumulate errors, some times you want to fail on first error. Don't flatten your errors, decide what is what you want. 
 
-## Extend types
+### Extend types
 
 Type `Monoid` allows you to combine 2 values and provides a neutral element. With subclassing you can't declare a Zero element or extend Standard library classes (they are final). The workaround is to use `traits` that provide the desired behaviour and that you pass as additional parameter to functions.
 
@@ -166,6 +167,7 @@ Final tips as we are running out of time:
 - Separate effects from logic (Free Monads?)
 - Read FP in Scala book
 
+***
 
 # Building a CQRS application using the Scala Type System and Akka 
 
@@ -209,6 +211,8 @@ Given a Protocol, Behaviour and Aggregate then you can have an actor that unders
 
 Command validations can usually be asynchronous, but events must be pure and always succeed.
 
+
+***
 
 # Keynote: Without Resilience, Nothing Else Matters 
 
