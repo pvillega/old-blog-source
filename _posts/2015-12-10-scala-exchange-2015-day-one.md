@@ -167,9 +167,54 @@ Final tips as we are running out of time:
 - Read FP in Scala book
 
 
+# Building a CQRS application using the Scala Type System and Akka 
+
+By [Renato Cavalcanti](https://twitter.com/renatocaval)
+
+Content of talk comes from current work done by Renato for the Belgium Government, so real world problems and lessons.
+
+CQRS: the idea behind is to have 2 objects, one which accepts commands and produces events, another object which receives the events and generates views on the model. If you don't use event sourcing you need to produce event and save both write and read model in same transaction, otherwise you will lose event and data. If the commit fails, you have a problem. That is why event sourcing is important, as events can be stored and replayed.
+
+## Command
+
+Replaying events is very powerful, as you can use the stored events from production in a test environment to check all your components work as expected and produce the desired results. Facilitates verification of code.
+
+The talk will show how to use CQRS in Akka, please watch video for full code examples. The examples uses mostly Akka-Http and Akka-Stream, two solutions for pretty well defined domains that help building the solution. The problem with Akka is that Akka is in fact a function to => Any, which means you lose type safety and has its own problems.
+
+The solution is to build something on top of Akka that isolates you from these issue. You find the building blocks of a CQRS system, following DDD: `DomainCommand`, `DomainEvent` and `Aggregate`. These are traits that help you define your building blocks.
+We also define some functions to validate events (which return a Future) and to construct Aggregates from DomainEvents.
+
+That solved, we have another issue to tackle. We need to persist the events, which we can do via Akka Persistence. We don't store the message received in the actor, but the event generated as reaction to that message. If an Aggregate (implemented as an actor) is restarted, it can recover its status from reading the chain of events in the event-store.
+
+But for all this to work we need a Protocol, a set of command and events for a given Aggregate. We also define the Behaviour (mapping between commands and events). We can create a DSL to facilitate generating Behaviours for an Aggregate. 
+
+[Renato now shows code showcases the implementation of a Protocol, the corresponding Behaviour DSL and an Aggregate. Please watch video for more details]
+
+If I have Aggregate, Protocol and Behaviour then I can create an AggregateManager, an Actor, that creates AggregateActors and manages its life-cycle. Your AggregateService is fully typed, via the protocol, and the Manager abstracts the Akka details from you.
 
 
+## Query 
 
+The Query side is about reading the events and producing Views on the data. We use Akka Persistence Query, an experimental feature. An actor generates a Projection from the events, so we don't need to recalculate the status every time (snapshot-style). Each projection has an id to identify it and provide versioning. The actor doesn't accept new events while generating a Projection, only after it has finished.
+
+[Renato now shows code of the Query part of the system]
+
+The Projection object is not typed, as usually you handle multiple events in a single projection. A future improvement is to strongly type projections, but not there yet. A Projection also has more data than the Aggregate stores, as there may be inferred data that is valuable for the business when viewing data, but we don't need to store explicitly.
+
+The DSL used by Renato also provides methods to `watch` a Projection, so we can detect events and, for example, wait until all events required are received before generating a projection result.
+
+## Takeways
+
+Given a Protocol, Behaviour and Aggregate then you can have an actor that understand the life-cycle and a fully typed AggregateService.
+
+Command validations can usually be asynchronous, but events must be pure and always succeed.
+
+
+# Keynote: Without Resilience, Nothing Else Matters 
+
+By [Jonas Bonér](https://twitter.com/jboner)
+
+Coming Soon!
 
 
 
