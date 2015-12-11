@@ -69,7 +69,36 @@ Scala is, no doubt, the future for Hadoop ecosystem. That is good.
 
 By [Adam Warski](https://twitter.com/adamwarski)
 
-Coming soon!
+The aim of today is to see the differences between Akka and Scalaz streams. Most of the talk will be live coding, so please watch the video.
+
+The problem we want to solve is to process data as it comes. We can't hold all the data into memory for some reason, irrelevant why. We focus on scenarios with a single node which cover a lot of common scenarios, for multi-node computations please check Spark.
+
+Akka Streams introduces itself as a library to process and transfer a sequence of elements in a bounded buffer space. 
+Scalaz Streams is a streaming I/O library focussed on compositionally, expressiveness and resource safety.
+
+In both cases we want to define a pipeline, in a type-safe way, and then run data through it. Scalaz-stream is slightly more typesafe than Akka Streams. In both libraries the first step is to create a 'blue-print' (graph for Akka, process for Scalaz) that defines how to transform the data. After that is defined we can execute it (materialise in Akka, run in Scalaz).
+
+The basic building blocks for Akka is a Graph (simple caseL linear pipeline), that has a source (produces elements), Sink (consumes an input) and some Flow pieces that transforms elements. At runtime each component is materialised into an Actor, and each actor does the operation defined in the relevant component. Each component also materialise into an additional value (example: Source into a Future you can use to get the result of the processing).
+
+In Scalaz the approach is different. We initially create a data type `Process[F[_], T]`. `T` is the output type, `F[_]` describes side-effects that can occur while processing. In simplest case we have `Process[Nothing, T]` that emits `T` without any change. We also have aliases like `Sink[F[_],0] = Process[F, O => F[Unit]]`. The Process is in fact akin to a state machine.
+
+Akka implements the reactive-streams standard, which provides back-pressure via a back-channel, via dynamic push-pull. Source only produces data when the back-channel indicates it is needed, to avoid overwhelming components downstream. Everything is actor based, things happen concurrently.
+
+Scalaz has back-pressure for free as it is entirely pull-based. Elements are evaluated on by one, in a functional approach by which we only process one element once the state machine says we can do so. Not dependent on Scalaz except for `Task`. To be clear, Scalaz is slower than Akka version (2-3x).
+
+(Code examples via live-coding start, please watch video. I'll try to summarise any key ideas mentioned)
+
+In Akka operations over the Source (like `map` or `filter`) are converted into actors behind the scenes. The first example to manipulate a text file (read, filter, map and save) already creates at least 8 actors. You can't influence the concurrency.
+
+Code in Scalaz version looks similar, just using different types as Source. Scalaz calls `run` twice, first once compiles process into a `Task`, the second runs the `Task`. If you want parallelism you need to be explicit about it, there is none by default.
+
+In the first test Akka took 3.84s while Scalaz took 6.93s. Take in account Scalaz was using a single thread (no parallelism defined).
+
+The second example wants to transform Int to Int, processing odd and even elements in parallel. For Akka this means creating a FlowGrap that defines the data flow by first creating components of the Graph and then declaring the connections. Beware the graph correctness is checked at runtime, not at compile time! Adam comments that creating a component, `SplitStage`, was complex and more so due to the use of a mutable API.
+
+Scalaz version of the Int processing, all purely functional. Adam confesses it was hard to write the first time. Scalaz requires us to be explicit on parallelism, so we need to create bounded queues (for memory protection) and we use streams to add/get elements to/from them. We also need to close the queues once we are done. In the code we define several components, please watch the video to see the full structure (hard to describe without showing the code). All the code is purely functional with full control on side-effects. All the connections are checked at compile time.
+
+In the second test Akka took 3.43s and Scalaz 3.25s, as both were waiting for 1s during processing.
 
 ***
 
