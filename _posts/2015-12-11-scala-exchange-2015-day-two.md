@@ -106,7 +106,23 @@ In the second test Akka took 3.43s and Scalaz 3.25s, as both were waiting for 1s
 
 By [Alexandre Archambault](https://twitter.com/alxarchambault)
 
-Coming soon!
+Modelisation: in Scala you use a lot of case classes and sealed traits to represent your domain. Hundreds or more on big projects. The usual tasks include conversion to/from JSON, persist in binary format, render as CSV, pretty-print, etc. You do this a lot, so you want to automate these tasks.
+
+You could use macros, but the Scala type system is quite complex and that means you need to consider a lot of things. Also, macros have some surprises within the API (side effects). All in all, using macros to automate these tasks becomes unwieldy.
+
+A solution is to use Shapeless instead.
+
+A first example is a `Printer` class that takes a value of type `T` and prints it. To explain how to do it, first let's talk about `HLists`. `HLists` are a sequence of types/values, similar to Scala `List` except its elements may have different types inside the same list (`String :: Int :: HNil` as an example). We can identify a `HList` to a case class of the same types. 
+
+As we can build `HLists` inductively, by prepending elements (`::`), we can define our `Printer` class by recursively iterating over the `HList` and printing the values. We use support `Printer` for basic types (`Printer[String]`, `Printer[Int]`, etc) and as we can decompose the `HList` into these basic components, we know we will print as expected.
+
+As we mentioned, we can map case classes to `HList`. Given that, defining `Printer` in terms of `HList` (which is easy) provides us a way to print any existing case class in our code, including any case class we create in the future. 
+
+Sometimes there are issues due to wrong divergences or recursive types. We can make our derivation more robust by using Shapeless' `Lazy` type, which helps the compiler resolve the issues mentioned before and handles real recursion in types properly.
+
+A caveat to consider is that implicit priorities may cause issues in automatic generation. There are workarounds, like using `export-hook` from Miles Sabin, or break implicits into an object hierarchy.
+
+There are ways to speed up the process, for example using [upickle](https://github.com/lihaoyi/upickle-pprint), a project that uses macros to help with type generation.
 
 ***
 
