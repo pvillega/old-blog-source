@@ -62,7 +62,6 @@ The last complain about Scala community it's the excessive fascination with synt
 
 Scala is, no doubt, the future for Hadoop ecosystem. That is good.
 
-
 ***
 
 # Streams: reactive? functional? Or: akka- & scalaz- streams side-by-side 
@@ -130,7 +129,65 @@ There are ways to speed up the process, for example using [upickle](https://gith
 
 By [Miles Sabin](https://twitter.com/milessabin)
 
-Coming soon!
+This is a different talk from the ones Miles usually gives, where he codes live. This one has slides! And no talking about Shapeless either.
+
+The title was chosen months ago. This is about Typelevel and how collaboration is good. But, following Jessica's talk, I feel the subtitle should be 'The benefits of community'.  
+
+A year ago, Lars gave a keynote in this very stage. I watched that video and was astonished to how much has happened in the last year. Some very good, some not quite so great.
+
+Let's travel to September 2014, where Typelevel announced a fork of the Scala compiler. We wanted to push some prevalent Typelevel ideas into it, to fix some particular things. It's something that can cause a lot of friction and disruption, but luckily the reaction was mostly positive. This shows that there is a big vibrant OS community around Scala. Shows that Typesafe is happy to let people help. It's better to have people collaborate instead of moaning. EPFL also showed a generally positive feeling about the possible outcomes of experimentation and prototyping in Scala compiler.
+
+A few months later, Scala Exchange 2014, Lars did his keynote. There was a friendly panel and everybody seemed going along very well.
+
+After that, something came to the spotlight: Typelevel is not only about technology and functional programming, it also wants to promote a good environment for minorities in the community. This caused Typelevel to adopt a code of conduct, seen as a means to an end: encourage good behaviour and deal with bad behaviour. Although most of the people accepted the code of conduct, this lead to a certain amount of drama in a part of the Scalaz community (where Lars was a primary maintainer). This had some cascading effects and shaped Typelevel since them up to now.
+
+One of the first things that became clear is that Scalaz couldn't continue as part of Typelevel. Lars stepped down as a Scalaz maintainer. But there was the need for the abstractions Scalaz provided for Typelevel libraries. As a consequence, Cats was created, to cover the technical needs while agreeing to the code of conduct, thus following Typelevel aims.
+
+As a result of the drama, we realised it wasn't clear to everybody else what is Typelevel about. So we needed to define Typelevel better to help people understand us besides our technical projects like Cats. 
+
+So what is Typelevel? (Mind, the following is work-in-progress and Typelevel wants feedback on it). Typelevel is a community of projects and individuals organised around:
+
+- pure, typeful, functional programming in Scala (not in Haskell!)
+- independent free and open-source software, not linked to any organisation or company. Scala owes **a lot** to the community, don't forget it.
+- a desire to share ideas and code
+- accessible and idiomatic learning resources
+- inclusive, welcoming and safe environment
+
+This is evolving, but what is we think Typelevel is about. Please watch Erik Osheim's Scala World talk to see ways you can build open source communities. Very recommended.
+
+Typelevel has always been a collection of projects. Since one year ago we had some changes: Scalaz, Scalaz-streams and Argonaut left, other libraries like Circe, Cats, Dogs, and a few more joined. There's been new tools, tests and laws like Ensime and tut (among others). There have also appeared several integration projects, like shapeless-argonaut, which enhance existing libraries; as well as macro/plugin helpers which facilitate the job of library maintainers. A lot of stuff in one year :)
+
+Typelevel Scala has not moved very much due to all the effort being put into Cats and related projects. But there have been tools developed that proof some concepts we wanted in the forked compiler, so some progress has been achieved. See George Leontiev's Scala World talk for more details. There's been some specific compiler work, minor, but it proves we can work with it.
+
+Some details on some of the libraries:
+
+- well stablished libraries like Scodec (binary data, very powerful and performant), Shapeless (generic programming) and Spire (numeric library for high precision operations). All widely used, directly or indirectly.
+- also well stablished are Discipline (law checking for type classes), ScalaCheck (automated property-based testing) and Spec2 (software specification)
+- we have integrations, generic extensions of other libraries. For example, argonaut-shapeless.
+- we have news things: Algebra, Cats, and Alleycats. Cats ia a Scalaz replacement. Algebra provides a set of algebraic type classes, comprising some fundamental type classes which are then used in Cats. Alleycats are lawless type classes and instances, which are also used in Cats.
+
+There's been a lot of activity lately. For example, since January 2015 there have been 1558 commits to Cats by 57 contributors. 
+
+Our guiding principles for Algebra, Cats, and Alleycats:
+
+- approachability: we want people to be able to approach the library much more easily than it was with Scalaz. For example, preference for text-based operators, make sure terminology is expressive enough instead of just focussing on the mathematical origin of the concept.
+- modularity: we broke Cats into submodules so it can be used as required instead of being a massive jar
+- documentation: we strive to have a massively improved documentation so we can convey useful information in a simple and centralised way
+- efficiency: we are willing to compromise and use (under the hood) non-functional constructs to improve performance. Watch Stew O'Connors talk at Scala by the Bay.
+
+Let's talk about Tut. It's a markdown processor which interprets Scala in code blocks. This provides type-checked documentation, which helps us having useful and relevant documentation. It's been even used by Underscore to produce a book, Essential Slick! 
+
+Circe is a JSON library for Scala and Scala.js. Derived from Argonaut, uses *jawn* for parsing. Uses Monocle for lenses, works with Refined. Uses Shapeless for codec derivation.
+
+(Miles is running out of time so it skips some stuff, like explaining other Typelevel libraries)
+
+Simulacrum: provides annotations to automatically generate boilerplate when creating type classes. Machinist is a macro that eliminates overhead associated with Simulacrum.
+
+The experience with all these projects has influenced the way we think about the forked compiler. We have a better picture of the trade offs, and we can tackle small issues in helpers and bigger pieces in the compiler itself.
+
+We want people to get involved. We hope we have created an active and lively community. But we want you in. There is an up-to-date list of projects in our homepage. Most projects exist in Github and Gitter.
+
+News! There will be two Typelevel summits next year! Please join us!
 
 ***
 
