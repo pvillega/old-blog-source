@@ -7,7 +7,7 @@ image:
 date: 2015-12-10T09:53:36+00:00
 ---
 
-[Scala Exchange 2015](https://skillsmatter.com/conferences/6862-scala-exchange-2015#program) is on! I will be updating this entry with summaries on the talks I attended. Typos a plenty, be warned, but I hope this proves useful to somebody while we wait for the videos to be made available.
+[Scala Exchange 2015](https://skillsmatter.com/conferences/6862-scala-exchange-2015#program) is on! I will be updating this entry with summaries on the talks I attended. Typos a plenty, be warned, but I hope this proves useful to somebody while we wait for the videos to be made available. You can also read my [summary of day two](/scala-exchange-2015-day-two/).
 
 <!-- more -->
 
