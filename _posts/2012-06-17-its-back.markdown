@@ -19,7 +19,7 @@ So, I needed something akin of a personal page. A place to show what I do, to st
 
 I have to thank several inspiration sources of this site:
 
-+ Brian Nesbitt for his [Play 2.0 Beta blog system][3] ([source code][4])
++ Brian Nesbitt for his [Play 2.0 Beta blog system][3] 
 + Eric Jones for his post on [building your own blog][5]
 + Kevin Burke for his [awesome layout][6] which he let me copy and tweak shamelessly
 + [The Oatmeal][8] for his impressive tumbeasts (which I hope you won't see often in action!)

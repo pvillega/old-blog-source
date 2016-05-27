@@ -1,6 +1,6 @@
 ---
 layout: home
-excerpt: "Personal blog of Pere Villega"
+description: "Personal blog of Pere Villega"
 tags: [programming, jvm, scala, java, software engineer]
 image:
   feature: background.jpg

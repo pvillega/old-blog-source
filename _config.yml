@@ -1,59 +1,66 @@
-# Site wide configuration
-
 title:            Pere Villega
-locale:           en_GB
-url:  http://perevillega.com           
+tagline:          If at first you don’t succeed; call it version 1.0
+description:      Personal blog. Software development and other stuff.
+#Comment out url when working locally to resolve base urls correctly
+#url:              http://perevillega.com 
+
+# Owner/author information
+owner:
+  name:           Pere Villega
+  avatar:         bio-photo.png
+  bio:            "If at first you don’t succeed; call it version 1.0"
+  email:          pere.villega@gmail.com
+  # Social networking links are used in author-bio sidebar. Update and remove as you like.
+  twitter: pvillega        
+  facebook:       
+  github: pvillega         
+  linkedin: perevillega       
+  instagram:      
+  lastfm:         
+  tumblr:         
+  stackoverflow: 116791/pere-villega
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:    
+
+# Analytics and webmaster tools stuff goes here
+google_analytics: UA-32390320-1  
+google_verify: bkCiO-bEhrfzDurtD6X772P1JroB8Q_Hb_I_AVSXqIE     
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify: A144448522476B8417CB74945AA3E085       
+
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: About
+    url: /about
+  - title: Articles
+    url: /articles
+  - title: Projects
+    url: /projects
 
 
-# Jekyll configuration
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Europe/London
+future:      true
+highlighter: rouge
+markdown:    kramdown
 
-permalink:   /:categories/:title/
-markdown:    redcarpet
-highlighter: pygments
-sass:
-  sass_dir: _sass
-  style: compressed
-gems:
-  - jekyll-sitemap
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title
 
 kramdown:
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
+  enable_coderay: false
 
-
-# Site owner
-owner:
-  name: Pere Villega
-  avatar: bio-photo.png
-  bio: "If at first you don’t succeed; call it version 1.0"
-  email: pere.villega@gmail.com
-  disqus-shortname: 
-  twitter: pvillega
-  facebook: pvillega
-  google:
-    plus: PereVillega
-    analytics: UA-32390320-1
-    verify: bkCiO-bEhrfzDurtD6X772P1JroB8Q_Hb_I_AVSXqIE
-    ad-client: 
-    ad-slot: 
-  bing-verify: A144448522476B8417CB74945AA3E085
-  github: pvillega
-  stackoverflow: 116791/pere-villega
-  linkedin: perevillega
-  instagram: #username
-  lastfm: #username
-  tumblr: #username
-  pinterest: #username
-  foursquare: #username
-  steam: #username
-  dribbble: #username
-  youtube: #username
-  soundcloud: #username
-  weibo: #username
-  flickr: #username
+  coderay:
+    coderay_line_numbers: 
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
 
 include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "minimal-mistakes.sublime-project", "minimal-mistakes.sublime-workspace"]

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-jekyll build
+./build.sh
 cd _site
 git add .
 git commit -m "Update to blog"

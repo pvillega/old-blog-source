@@ -20,7 +20,7 @@ The solution was provided by, who else, [StackOverflow](http://stackoverflow.com
 
 Let's assume we have the following code structure:
 
-``` scala Example code
+{% highlight scala %}
 // Enum sample #1
 object EnumType1 extends Enumeration {
   type EnumType1 = Value
@@ -47,11 +47,11 @@ object EnumType2 extends Enumeration {
 
 // Case class that uses enums
 case class EnumCaseClass(name: String, enum1: EnumType1, enum2: EnumType2)
-```
+{% endhighlight %}
 
 We can take advantage of *Play-JSON* and create a companion object for our case class that will helps us serializing instances of this class from or into JSON.
 
-``` scala Support object to convert to/from JSON
+{% highlight scala %}
 object EnumCaseClass {
   // Support object to convert EnumCaseClass to Json using Play-JSON
   implicit val fmt = Json.format[EnumCaseClass]
@@ -60,19 +60,19 @@ object EnumCaseClass {
 
   def toJson(enumCaseClass: EnumCaseClass) = Json.toJson(enumCaseClass)
 }
-```
+{% endhighlight %}
 
 Unfortunately, when compiling we will get errors due to the enumerations missing valid *Reads* and *Writes*. We can test this by removing the enum parameters from the case class and replacing them by simple types as shown below. The code works and converts the case class into JSON, which proves that the issue is the enumeration type that can't be managed by *Play-JSON*.
 
-``` scala Simple case class
+{% highlight scala %}
 case class EnumCaseClass(name: String, enum1: Int, enum2: Int)
-```
+{% endhighlight %}
 
 # Solution
 
 The solution is, obviously, to provide *Reads* and *Writes* for the enumerations. But we would like to do it in a generic way, to avoid duplication of very similar code. [StackOverflow](http://stackoverflow.com/questions/15488639/how-to-write-readst-and-writest-in-scala-enumeration-play-framework-2-1/15489179#15489179) provides an example of a support class that can accomplish this:
 
-``` scala Helper object http://stackoverflow.com/questions/15488639/how-to-write-readst-and-writest-in-scala-enumeration-play-framework-2-1/15489179#15489179
+{% highlight scala %} 
 object EnumUtils {
   def enumReads[E <: Enumeration](enum: E): Reads[E#Value] = 
     new Reads[E#Value] {
@@ -99,11 +99,11 @@ object EnumUtils {
     Format(enumReads(enum), enumWrites)
   }
 }
-```
+{% endhighlight %}
 
 This creates an object that provides generic *Reads*, *Writes* and *Format* methods that can be used with any enumeration. We can use the methods in our enumerations, adding some implicit vals of type *Reads* and *Writes* that will redirect the execution flow to the support object, as follows:
 
-``` scala Fixing enumerations
+{% highlight scala %}
 object EnumType1 extends Enumeration {
   type EnumType1 = Value
 
@@ -134,7 +134,7 @@ object EnumType2 extends Enumeration {
 
   implicit def enumWrites: Writes[EnumType2] = EnumUtils.enumWrites
 }
-```
+{% endhighlight %}
 
 By adding this support object and the enumeration-specific *vals*, we can now compile the project and serialize our *case class* into JSON.
 

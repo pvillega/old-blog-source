@@ -15,16 +15,15 @@ But I digress. Back to the post. Adding Angular to a Play app is as simple as yo
 
 So we have a Javascript framework, and obviously we want to test it. Unfortunately the recommended way to test Angular is via [Jasmine](http://pivotal.github.com/jasmine/), a Javascript BDD framework. I say unfortunately because that would mean running 2 commands for testing: one for Play tests and another for Angular tests. Or does it?
 
-It is on moments like this when Open Source shows its worthiness. Enter [The Guardian](http://www.guardian.co.uk/) and its IT department, which open sources a lot of the code they create to run their online platform. A wise company, they use Scala and Play and they created [Sbt-Jasmine](https://github.com/guardian/sbt-jasmine-plugin), a plugin to run Jasmine inside Sbt projects. Given that Play 2 uses Sbt, this should prove simple.
+It is on moments like this when Open Source shows its worthiness. Enter [The Guardian](http://www.guardian.co.uk/) and its Software development department, which open sources a lot of the code they create to run their online platform. A wise company, they use Scala and Play and they created [Sbt-Jasmine](https://github.com/guardian/sbt-jasmine-plugin), a plugin to run Jasmine inside Sbt projects. Given that Play 2 uses Sbt, this should prove simple.
 
 Well, to be honest it wasn't *so* simple, that's why I decided to document it here to save time to other interested people. This assumes a working Play 2.0.4 project, should work with any 2.0.x project but can't promise anything about 2.1 (have to test it yet)
 
-###Integrating Sbt-Jasmine
+## Integrating Sbt-Jasmine
 
 This is quite straightforward, you just need to follow the instructions from the [Sbt-Jasmine](https://github.com/guardian/sbt-jasmine-plugin) page. On your project, under the `project` folder, create another folder named `project` (that is, you will have `/project/project/` path). Inside that new folder create a file `Plugins.scala` and add this code to it:
 
 ``` scala
-
 
 import sbt._
 
@@ -40,7 +39,7 @@ object Plugins extends Build {
 
 This will load the plugin directly from Github into your project. 
 
-###Adding Jasmine  as part of your test cycle
+## Adding Jasmine  as part of your test cycle
 
 Now that we have the plugin in, we want to be able to run both test types (Play and Jasmine) when executing `play test`. To that aim we have to edit our `Build.scala` project file to let Play know about Jasmine. 
 
@@ -109,7 +108,7 @@ val main = PlayProject(appName, appVersion,
 
 And that's all. If you add some Jasmine tests under `test/assets` and then execute `play test` you will see them being run. Remember what I said about simplicity? Why should you remember to run 2 suits independently when 1 command can do that for you?
 
-###To be improved
+## To be improved
 
 As much as I would like, this is not perfect. I found a couple of issues when integrating Jasmine and Play. Given I'm not an expert on neither, any help will be appreciated:
 
