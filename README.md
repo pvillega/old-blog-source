@@ -2,15 +2,22 @@
 
 My personal blog (Pere Villega - @pvillega)
 
-Uses:
+Blog built using:
+
 - Jekyll: https://jekyllrb.com/
 - Theme: https://mmistakes.github.io/minimal-mistakes/
 
 Usage:
+
 - `run.sh` to run in localhost (uses `bundle` to runt he right `jekyll`)
 - `build.sh` to build locally the blog
+- `clean.sh` to clean the generated artifacts
+- `publish.sh` to publish the blog to the internet
 
 Notes:
+
+- fixed issue with homepage, it was not listing articles. Fix: on `home` layout don't iterate over `site.categories.articles` but over `site.posts`
+- fixed issue with navigation. Fix: on `_includes/navigation.html` force `href` on `site.name` to `/`
 - removed on `main.css` line `686` class `p+p{text-indent:1.5em;margin-top:-1.5em;}`
 - added extra styles `margin-top:-1.5em;` to elements in `_includes/author-bio.html`
 - there is no `icomoon` glyph for Stackoverflow added to the font of the theme. If added in the future, add an entry on `_includes/author-bio.html` to load the icon

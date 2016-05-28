@@ -1,2 +1,2 @@
 #!/bin/bash
-bundle exec jekyll s
+bundle exec jekyll serve -w --drafts -V
