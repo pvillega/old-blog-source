@@ -17,3 +17,5 @@ When we built the responsive site we wanted to improve the back-end, specially a
 You can read the full article [here](http://www.gumtree.com/devteam/2015-01-06-integrating-hystrix.html).
 
 As always, feedback via Twitter/Email is more than welcome.
+
+Update: the post was lost when Gumtree moved blog :(

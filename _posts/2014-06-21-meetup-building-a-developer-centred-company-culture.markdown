@@ -16,8 +16,10 @@ The subject was Building a Developer Centred Company Culture, which is of partic
 I took notes during the talks and I'd like to share a summary of the main points, as it is a relevant subject for many developers.
 First of all a disclaimer: the text below tries to be a raw summary of what I understood. Any errors are mine and of my transcription. That said, I hope I could capture the more relevant parts.
 
-You can read it [here](http://www.gumtree.com/devteam/2014-06-19-building-developer-centred-company-culture.html).
+You can read it  [here](https://medium.com/@GumtreeDevTeam/meetup-building-a-developer-centred-company-culture-2c9fac60ba9b).
 
 As always, feedback via Twitter/Email is more than welcome.
+
+
 
 
