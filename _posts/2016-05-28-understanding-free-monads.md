@@ -97,7 +97,7 @@ We have defined a new type, a `Free` Monad on `Orders` and a parameter `A`. But 
   def sell(stock: Symbol, amount: Int): OrdersF[Response] = liftF[Orders, Response](Sell(stock, amount))
 ```
 
-Notice that the return types of the methods, `OrdersF[Response]`, match the are a Free Monad (as defined above). Also, the type parameter returned, `Response`, matches the parameter in the `extends` portion of our case class definition, which we mapped to work akin to *return type* when converting from methods to case classes.
+Notice that the return types of the methods, `OrdersF[Response]`, match the Free Monad (as defined above). Also, the type parameter returned, `Response`, matches the parameter in the `extends` portion of our case class definition, which we mapped to work akin to *return type* when converting from methods to case classes.
 
 Now we can use these support methods, `buy` and `sell`, to obtain our monads. And it works:
 
