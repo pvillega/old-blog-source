@@ -7,7 +7,7 @@ image:
 date: 2016-11-14T15:01:05+01:00
 ---
 
-[Shapeless](https://github.com/milessabin/shapeless) is a type class and dependent type based generic programming library for Scala. It had its origins in several talks by Miles Sabin (@milessabin), and he has been the main contributor to the project.
+[Shapeless](https://github.com/milessabin/shapeless) is a type class and dependent type based generic programming library for Scala. It had its origins in several talks by [Miles Sabin](https://twitter.com/milessabin), and he has been the main contributor to the project.
 
 <!-- more -->
 
