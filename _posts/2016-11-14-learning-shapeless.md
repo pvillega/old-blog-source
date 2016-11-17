@@ -23,7 +23,7 @@ These [slides](https://speakerdeck.com/nigewarren/introduction-to-shapeless) fro
 
 This [video](https://www.youtube.com/watch?v=JKaCCYZYBWo) from [Valentin Kasas](https://twitter.com/valentinkasas?lang=en) at [Scalar 2016](http://www.scalar-conf.com) shows a practical use case of Shapeless and HList, with example code. 
 
-The above links are introductions to the library and, as such, limited in scope. But you can already see a common theme, via the use of HList constructs: to provide a single implementation that works with all your types, instead of one implementation per every single type. 
+The above links are introductions to the library and, as such, limited in scope. But you can already see a common theme, via the use of HList constructs: to provide a single implementation that works with all your types, instead of one implementation for every single type. 
 
 This approach has obvious advantages: less code means less bugs and less surface to be tested, while the fact it works for any case class makes the code more robust against new types introduced in the future.
 
@@ -112,7 +112,7 @@ If you browse the [Scala index](https://index.scala-lang.org/) and search for `s
 * [Argonaut Shapeless](https://index.scala-lang.org/alexarchambault/argonaut-shapeless) which provides automatic derivation of codecs for your case classes
 * [Shapeless Contrib](https://index.scala-lang.org/typelevel/shapeless-contrib) which enables integration of Shapeless with libraries like Scalaz, which benefit from automatic derivation
  
-And many more. These libraries make your coding experience easier by leveraging shapeless. But you are not exposed to Shapeless itself, that's hidden from you. For example, [Argonaut Shapeless](https://index.scala-lang.org/alexarchambault/argonaut-shapeless) provides json codecs for your case classes automatically. So, as per the library documentation, this works:
+And many more. These libraries make your coding experience easier by leveraging shapeless. But you are not exposed to Shapeless itself, that's hidden from you. For example, [Argonaut Shapeless](https://index.scala-lang.org/alexarchambault/argonaut-shapeless) provides json codecs for your case classes automatically. So, as per the library documentation, this just works:
 
 ```scala
 import argonaut._, Argonaut._, ArgonautShapeless._
