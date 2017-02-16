@@ -7,19 +7,19 @@ image:
 date: 2016-05-28T22:01:05+01:00
 ---
 
-The concept of [Free Monad](http://typelevel.org/cats/tut/freemonad.html) is becoming popular, or at least I've seen plenty of mentions about it in the Scala Functional Programming community as of late. Why is it relevant?
+The concept of [Free Monad](http://typelevel.org/cats/datatypes/freemonad.html) is becoming popular, or at least I've seen plenty of mentions about it in the Scala Functional Programming community as of late. Why is it relevant?
 
 <!-- more -->
 
-A couple of warnings before I start. Judging by the code I wrote, this will be a *very long* post. You can look at the [code](https://github.com/pvillega/free-monad-sample) and come back to read this post later. Also, I'm going to take a *practical* approach to Free Monad. I'll provide a list of relevant links at the end you can use to learn more about Free Monad and its nuisances, including Cat's explanation on [the theory behind Free](http://typelevel.org/cats/tut/freemonad.html#what-is-free-in-theory). But no theory here, sorry :)
+A couple of warnings before I start. Judging by the code I wrote, this will be a *very long* post. You can look at the [code](https://github.com/pvillega/free-monad-sample) and come back to read this post later. Also, I'm going to take a *practical* approach to Free Monad. I'll provide a list of relevant links at the end you can use to learn more about Free Monad and its nuisances, including Cat's explanation on [the theory behind Free](http://typelevel.org/cats/datatypes/freemonad.html#what-is-free-in-theory). But no theory here, sorry :)
 
 Let's do this.
 
 ## Why should I care about Free Monad?
 
-Anything related to [Monads](http://typelevel.org/cats/tut/monad.html) seems scary and complex for the uninitiated. Why should I spend time learning that? What's the benefit?
+Anything related to [Monads](http://typelevel.org/cats/typeclasses/monad.htmll) seems scary and complex for the uninitiated. Why should I spend time learning that? What's the benefit?
 
-There are descriptions of [Free Monad](http://typelevel.org/cats/tut/freemonad.html) that give a good overview on why to use it. In my humble opinion, the main benefit that Free provides is separation between the program definition and its execution. 
+There are descriptions of [Free Monad](http://typelevel.org/cats/datatypes/freemonad.html) that give a good overview on why to use it. In my humble opinion, the main benefit that Free provides is separation between the program definition and its execution. 
 
 You start by building an embedded DSL, which can be understood by the business. Using that language, you define a program as a series of actions that cover a business case, without any implementation details associated. 
 
@@ -29,7 +29,7 @@ This has the potential to provide more robust code, that can be tested easily, a
 
 In addition, implementations of Free Monad (both in Cats and Scalaz) provide other benefits, for example the use of Trampolining for stack-safe recursion.
 
-A bit like with [Monad](http://typelevel.org/cats/tut/monad.html), a [Free Monad](http://typelevel.org/cats/tut/freemonad.html) is a relatively simple concept behind a scary name. Easier than it seems, and very useful. Either that, or I've understood nothing and need to go back to the study desk ;)
+A bit like with [Monad](http://typelevel.org/cats/typeclasses/monad.htmll), a [Free Monad](http://typelevel.org/cats/datatypes/freemonad.htmll) is a relatively simple concept behind a scary name. Easier than it seems, and very useful. Either that, or I've understood nothing and need to go back to the study desk ;)
 
 ## A business case
 
@@ -698,7 +698,7 @@ Last, but not least, I need to thank [Cat's Gitter channel](https://gitter.im/ty
 
 I've used a lot of sources to improve my understanding on Free Monad. Below you can find a list of links that I found very relevant and helpful:
 
-* Cats definition (very good explanation): [http://typelevel.org/cats/tut/freemonad.html](http://typelevel.org/cats/tut/freemonad.html)
+* Cats definition (very good explanation): [http://typelevel.org/cats/datatypes/freemonad.htmll](http://typelevel.org/cats/datatypes/freemonad.htmll)
 * Free Monad technical explanation: [http://okmij.org/ftp/Computation/free-monad.html](http://okmij.org/ftp/Computation/free-monad.html)
 * Tim Perrett's blog post (uses Scalaz): [http://timperrett.com/2013/11/21/free-monads-part-1/](http://timperrett.com/2013/11/21/free-monads-part-1/)
 * Underscore post by Noel Welsh (uses Scalaz): [http://underscore.io/blog/posts/2015/04/14/free-monads-are-simple.html](http://underscore.io/blog/posts/2015/04/14/free-monads-are-simple.html)
